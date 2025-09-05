@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    --color-primary: hsl(43deg 98% 55%);
+    --color-primary-light: #ffeecb;
+    --color-danger: #c1554d;
+    --color-secondary: #dcdcdc;
+    --color-valid: #009363;
+}
+
+
+body {
+    margin:0;
+    padding:0;
+}
