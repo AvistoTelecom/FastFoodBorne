@@ -1,0 +1,88 @@
+{
+  "ingredient": {
+
+    "burgerBun": {
+      "image": "path/to/image.jpg",
+      "name": "Pain burger",
+      "price": 0.5
+    },
+    "steak": {
+      "image": "path/to/image.jpg",
+      "name": "Steak",
+      "price": 2
+    },
+    "tomatoes": {
+      "image": "path/to/image.jpg",
+      "name": "Tomate",
+      "price": 1
+    },
+    "bacon": {
+      "image": "path/to/image.jpg",
+      "name": "Bacon",
+      "price": 1
+    },
+    "ice": {
+      "image": "path/to/image.jpg",
+      "name": "Glace",
+      "price": 0
+    },
+    "friesBacon": {
+      "image": "path/to/image.jpg",
+      "name": "Frites au Bacon",
+      "price": 2
+    },
+    "friesCheddar": {
+      "image": "path/to/image.jpg",
+      "name": "Frites au Cheddar",
+      "price": 2
+    }
+  },
+
+  "product": {
+    "leDoggo": {
+      "image": "path/to/image.jpg",
+      "name": "Le Doggo",
+      "price": 11.99,
+      "type": "main",
+      "composition": {
+        "burgerBun": {"ingredient": "burgerBun", "defaultQuantity": 1},
+        "steak": {"ingredient": "steak", "defaultQuantity": 1},
+        "tomatoes": {"ingredient": "tomatoes", "defaultQuantity": 1},
+        "bacon": {"ingredient": "bacon", "defaultQuantity": 1}
+      }
+    },
+    "fries": {
+      "image": "path/to/image.jpg",
+      "name": "Frites",
+      "price": 2,
+      "type": "side",
+      "composition": {
+        "friesBacon": {"ingredient": "friesBacon", "defaultQuantity": 0},
+        "friesCheddar": {"ingredient": "friesCheddar", "defaultQuantity": 0}
+      }
+    },
+    "coke": {
+      "image": "path/to/image.jpg",
+      "name": "Coca-Cola",
+      "price": 1.5,
+      "type": "drink",
+      "composition": {
+        "ice": {"ingredient": "ice", "defaultQuantity": 1}
+      }
+    }
+  },
+
+  "menu":{
+    "menuDoggo": {
+      "image": "path/to/image.jpg",
+      "name": "Menu Doggo",
+      "price": 14.99,
+      "composition": {
+        "main": "leDoggo",
+        "side": "fries",
+        "drink": "coke"
+      }
+    }
+  } 
+  
+}
