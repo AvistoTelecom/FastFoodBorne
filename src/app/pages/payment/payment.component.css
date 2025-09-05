@@ -1,3 +1,67 @@
-:host {
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    font-family: Overpass, sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    margin: 0;
+}
+
+h1 {
+    font-family: Overpass, sans-serif;
+    font-weight: 800;
+    font-size: 64px;
+    text-align: center;
+    max-width: 690px;
+}
+
+.btn-column {
+    margin-top: 120px;
+    margin-bottom: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+.btn-unavailable {
+    width: 420px;
+    height: 240px;
+    background-color: var(--color-secondary);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    padding-bottom: 20px;
+    border: 1px solid black;
+}
+
+.btn-available {
+    width: 420px;
+    height: 240px;
+    background-color: var(--color-primary);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    padding-bottom: 20px;
+    border: 1px solid #965923;
+}
+
+.container-unavailable{
   display: block;
+  flex-direction: column;
+}
+
+.text-indisponible {
+    color: var(--color-danger);
+    font-family: Overpass, sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
 }

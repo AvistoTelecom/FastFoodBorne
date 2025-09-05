@@ -1,0 +1,20 @@
+<app-header-image />
+<div class="title">
+    <h1>Choisissez votre mode de paiement</h1>
+</div>
+
+<div class="btn-column">
+    <div class="container-unavailable">
+        <button class="btn-unavailable">
+            <p>A la borne</p>
+            <img class="borne" src="assets/global/borne.webp" />
+        </button>
+        <p class="text-indisponible">Indisponible</p>
+    </div>
+    <button class="btn-available" [routerLink]="['/bills']">
+        <p>Au comptoir</p>
+        <img class="comptoir" src="assets/global/comptoir.webp" />
+    </button>
+</div>
+
+<button class="btn">Retour</button>
