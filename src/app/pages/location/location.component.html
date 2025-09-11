@@ -6,10 +6,20 @@
 <div class="btn-column">
     <button [routerLink]="['/home']">
         <p>Sur place</p>
-        <img class="couvert" src="assets/global/Couverts.webp" />
+        <img class="couvert" src="assets/global/Couverts.webp" alt="Couverts" />
     </button>
-    <button [routerLink]="['/home']">
+    <button [routerLink]="['/home']" (click)="openModal()">
         <p>A emporter</p>
-        <img class="emporter" src="assets/global/A-Emporter.webp" />
+        <img
+            class="emporter"
+            src="assets/global/Sac-a-emporter.webp"
+            alt="A emporter"
+        />
     </button>
 </div>
+
+<app-item-selection
+    name="Muffin"
+    image="assets/product/Muffin.webp"
+    [price]="9.99"
+></app-item-selection>

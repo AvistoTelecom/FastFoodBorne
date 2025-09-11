@@ -1,3 +1,5 @@
+@import url('@angular/cdk/overlay-prebuilt.css');
+
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
 
