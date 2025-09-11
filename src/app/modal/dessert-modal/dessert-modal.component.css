@@ -1,0 +1,14 @@
+.title {
+  font-size: xx-large;
+}
+
+.modal{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+}
+
+.dessert-item {
+  
+}

@@ -1,0 +1,15 @@
+<div class="modal">
+    <h2 class="title">Un petit dessert ?</h2>
+
+    <li *ngFor="let dessert of dessertList" class="dessert-item">
+        <img
+            [src]="'assets/product/' + dessert.image"
+            alt="{{ dessert.name }}"
+            width="100px"
+            height="100px"
+        />
+        <h3>{{ dessert.name }}</h3>
+        <p>Price: {{ dessert.price }}</p>
+        <button>Add to Cart</button>
+    </li>
+</div>
