@@ -1,0 +1,62 @@
+:host {
+    position: relative;
+}
+
+img {
+    height: 150px;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 20px;
+}
+
+.carousel {
+    transform: translateY(-80px);
+    z-index: 10;
+    max-height: 1060px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+
+    > * {
+        flex: 100% 0 0;
+    }
+
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
+}
+
+.carousel::-webkit-scrollbar {
+    display: none; /* Older Safari and Chromium */
+}
+
+.card {
+    width: 200px;
+    margin-right: 20px;
+    margin-left: 20px;
+    color: black;
+    background-color: white;
+    border-radius: 24px;
+    box-shadow: rgb(0 0 0 / 10%) 5px 5px 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid var(--color-secondary)
+}
+
+.card p {
+    font-family: Interstate, sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0;
+    padding: 10px;
+}
+
+
+.is-selected {
+  background-color: var(--color-primary);
+}

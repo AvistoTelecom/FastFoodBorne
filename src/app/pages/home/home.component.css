@@ -1,3 +1,63 @@
 :host {
-  display: block;
+    display: block;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+}
+
+.column-product {
+    overflow: scroll;
+    max-height: 1060px; 
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
+}
+
+.column-product::-webkit-scrollbar {
+    display: none; /* Older Safari and Chromium */
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+    place-items: center;
+    padding-bottom: 40px;
+}
+
+h2 {
+    font-family: Interstate, sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+hr {
+    margin-top: 40px;
+    margin-bottom: 8px;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    border: none;
+    width: 100%;
+    height: 140px;
+    font-family: Interstate, sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+}
+
+.btn-giveup {
+    background-color: var(--color-danger);
+}
+
+
+.btn-order {
+    background-color: var(--color-secondary);
 }

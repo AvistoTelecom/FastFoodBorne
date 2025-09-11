@@ -1,1 +1,25 @@
-<app-header-image [withPub]="true"/>
+<app-header-image [withPub]="true" />
+<main>
+    <app-product-carousel />
+    <div class="column-product">
+        <h2>Menus</h2>
+        <div class="product-container">
+            <app-product-card [menu]="menu" />
+            <app-product-card [menu]="menu" />
+            <app-product-card [menu]="menu" />
+            <app-product-card [menu]="menu" />
+        </div>
+        <hr />
+        <h2>A l'unité</h2>
+        <div class="product-container">
+            <app-product-card [menu]="menu" />
+            <app-product-card [menu]="menu" />
+            <app-product-card [menu]="menu" />
+            <app-product-card [menu]="menu" />
+        </div>
+    </div>
+</main>
+<div class="btn-container">
+    <button class="btn-giveup">Abandon</button>
+    <button class="btn-order">Ma commande</button>
+</div>

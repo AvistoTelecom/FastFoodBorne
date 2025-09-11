@@ -1,6 +1,7 @@
 :host {
     display: block;
     height: fit-content;
+    max-height: 400px;
 }
 
 img {

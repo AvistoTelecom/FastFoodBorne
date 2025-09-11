@@ -1,0 +1,14 @@
+<div class="carousel">
+    <div class="group">
+        @for (menu of menuList(); track menu.slug) {
+            <div
+                class="card"
+                [class]="menu.isSelected ? 'is-selected' : ''"
+                (click)="select(menu.slug)"
+            >
+                <img [src]="menu.imagePath" alt="menu" />
+                <p>{{ menu.slug }}</p>
+            </div>
+        }
+    </div>
+</div>
