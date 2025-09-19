@@ -78,4 +78,6 @@ export class Product {
         }, 0);
         return this.meta.price + supplementPrice;
     });
+
+    image = computed(() => `./assets/product/${this.meta.image}`);
 }

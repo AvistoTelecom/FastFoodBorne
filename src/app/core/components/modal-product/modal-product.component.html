@@ -2,10 +2,7 @@
     [class.selected-product]="selected()"
     (click)="selected.set(!selected())"
 >
-    <img
-        [src]="'assets/product/' + product().meta.image"
-        [alt]="product().meta.name"
-    />
+    <img [src]="product().image()" [alt]="product().meta.name" />
     <h2>{{ product().meta.name }}</h2>
     <p>
         <b>+{{ product().meta.price }}€</b>

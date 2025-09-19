@@ -10,12 +10,14 @@ import { HeaderImageComponent } from '../../core/components/header-image/header-
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductCarouselComponent } from './product-carousel/product-carousel.component';
 import { MenuService } from '../../core/services/menu.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-home',
     standalone: true,
     imports: [
         CommonModule,
+        RouterModule,
         HeaderImageComponent,
         ProductCardComponent,
         ProductCarouselComponent,

@@ -9,9 +9,7 @@
             <h2>Menus</h2>
             <div class="product-container">
                 @for (menu of menuList(); track menu.meta.name) {
-                    <app-product-card
-                        [product]="menu.selectedComposition().main!"
-                    />
+                    <app-product-card [product]="menu" />
                 }
             </div>
             <hr />
@@ -25,6 +23,8 @@
     </div>
 </main>
 <div class="btn-container">
-    <button class="btn-giveup">Abandon</button>
-    <button class="btn-order">Ma commande</button>
+    <button class="btn-giveup" [routerLink]="['/splash-screen']">
+        Abandon
+    </button>
+    <button class="btn-order" [routerLink]="['/home']">Ma commande</button>
 </div>

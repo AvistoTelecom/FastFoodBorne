@@ -10,7 +10,10 @@
                 "
                 (click)="select(category.meta.name)"
             >
-                <img [src]="category.meta.image" alt="menu" />
+                <img
+                    [src]="'./assets/product/' + category.meta.image"
+                    alt="menu"
+                />
                 <p>{{ category.meta.name }}</p>
             </button>
         }

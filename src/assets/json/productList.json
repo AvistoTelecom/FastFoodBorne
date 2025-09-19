@@ -370,13 +370,13 @@
       "menuNameList": ["Menu Dalleux", "Menu Doggo", "Menu Super Bacon", "Menu Veggie", "Menu Fish"]
     },
     {
-      "image": "boisson.webp",
+      "image": "Boisson.webp",
       "name": "Boisson",
       "productNameList": ["Coca-Cola", "Pepsi", "Redbull", "Eau", "Café", "Jus de pomme"],
       "menuNameList": []
     },
     {
-      "image": "frites.webp",
+      "image": "Frites.webp",
       "name": "Accompagnement",
       "productNameList": ["Frites", "Frites XL", "Onions Rings", "Chicken Wings", "Tenders", "Salade"],
       "menuNameList": []

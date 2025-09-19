@@ -56,4 +56,6 @@ export class Menu {
         const drinkPrice = composition.drink?.price() ?? 0;
         return mainPrice + sidePrice + drinkPrice;
     });
+
+    image = computed(() => `./assets/menu/${this.meta.image}`);
 }

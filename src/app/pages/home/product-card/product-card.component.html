@@ -1,4 +1,4 @@
-<img [src]="imageUrl()" [alt]="product().meta.name" />
+<img [src]="product().image()" [alt]="product().meta.name" />
 <h2>{{ product().meta.name }}</h2>
 <p class="price">
     <span class="old">{{ oldPrice() }}€</span><b>{{ product().meta.price }}€</b>
