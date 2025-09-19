@@ -1,8 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    computed,
+    inject,
+    signal,
+} from '@angular/core';
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductCarouselComponent } from './product-carousel/product-carousel.component';
+import { MenuService } from '../../core/services/menu.service';
 
 @Component({
     selector: 'app-home',
@@ -18,12 +25,21 @@ import { ProductCarouselComponent } from './product-carousel/product-carousel.co
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-    menu = {
-        image: 'Menu-Dalleux.webp',
-        name: 'Menu Dalleux',
-        price: 14.99,
-        composition: {
-            main: 'leDalleux',
-        },
-    };
+    readonly menuService = inject(MenuService);
+    readonly categoryList = this.menuService.getCategoryList();
+    readonly selectedCategoryName = signal('Nos offres');
+
+    readonly selectedCategory = computed(
+        () =>
+            this.categoryList.find(
+                (category) =>
+                    category.meta.name === this.selectedCategoryName(),
+            )!,
+    );
+    readonly productList = computed(() =>
+        this.menuService.getProductListOfACategory(this.selectedCategory()),
+    );
+    readonly menuList = computed(() =>
+        this.menuService.getMenuListOfACategory(this.selectedCategory()),
+    );
 }

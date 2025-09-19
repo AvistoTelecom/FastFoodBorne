@@ -1,14 +1,18 @@
 <div class="carousel">
     <div class="group">
-        @for (menu of menuList(); track menu.slug) {
-            <div
+        @for (category of categoryList(); track category.meta.name) {
+            <button
                 class="card"
-                [class]="menu.isSelected ? 'is-selected' : ''"
-                (click)="select(menu.slug)"
+                [class]="
+                    category.meta.name === selectedCategoryName()
+                        ? 'is-selected'
+                        : ''
+                "
+                (click)="select(category.meta.name)"
             >
-                <img [src]="menu.imagePath" alt="menu" />
-                <p>{{ menu.slug }}</p>
-            </div>
+                <img [src]="category.meta.image" alt="menu" />
+                <p>{{ category.meta.name }}</p>
+            </button>
         }
     </div>
 </div>

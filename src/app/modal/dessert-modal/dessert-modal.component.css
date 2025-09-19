@@ -1,5 +1,5 @@
 .title {
-  font-size: xx-large;
+  font-size: 58px;
 }
 
 .modal{
@@ -7,8 +7,37 @@
   align-items: center;
   flex-direction: column;
   background-color: white;
+  width: 750px;
+  border: 2px solid var(--color-secondary);
+  border-radius: 24px;
 }
 
-.dessert-item {
-  
+.dessert-wrapper{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+  gap: 20px;
+  padding: 0 45px 30px;
+}
+
+
+button{
+  width: 180px;
+  height: 60px;
+  font-size: 38px;
+  border-radius: 36px;
+}
+
+.button-wrapper{
+  padding-bottom: 30px;
+}
+
+.cancel-button{
+  background-color: var(--color-primary);
+}
+
+.validate-button{
+  margin-left: 30px;
+   background-color: var(--color-valid);
+   color: white;
 }

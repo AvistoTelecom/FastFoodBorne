@@ -1,393 +1,403 @@
 {
-  "ingredient": {
+  "ingredient": [
 
-    "burgerBun": {
+    {
       "image": "Pain.webp",
       "name": "Pain burger",
       "price": 0.5
     },
-    "steak": {
+    {
       "image": "Steak.webp",
       "name": "Steak",
       "price": 2
     },
-    "pickles": {
+    {
       "image": "Cornichon.webp",
       "name": "Cornichon",
       "price": 0.5
     },
-    "friedOnions": {
+    {
       "image": "Oignons-grilles.webp",
       "name": "Oignons frits",
       "price": 0.5
     },
-    "eggs": {
+    {
         "image": "Oeuf-au-plat.webp",
         "name": "Oeuf",
         "price": 0.5
       },
-    "tomatoes": {
+    {
       "image": "Tomates.webp",
       "name": "Tomate",
       "price": 1
     },
-    "bacon": {
+    {
       "image": "Bacon.webp",
       "name": "Bacon",
       "price": 1
     },
-    "ice": {
+    {
       "image": "Glace.webp",
       "name": "Glace",
       "price": 0
     },
-    "friesBacon": {
+    {
       "image": "image.jpg",
       "name": "Frites au Bacon",
       "price": 2
     },
-    "friesCheddar": {
+    {
       "image": "image.jpg",
       "name": "Frites au Cheddar",
       "price": 2
     },
-    "cheddar": {
+    {
       "image": "Cheddar.webp",
       "name": "Cheddar",
       "price": 1
     },
-    "salad": {
+    {
       "image": "Salad.webp",
       "name": "Salade",
       "price": 1
     },
-    "bellPepper": {
+    {
       "image": "Poivron-JAUNE.webp",
       "name": "Poivron",
       "price": 1
     },
-    "fishSteak": {
+    {
       "image": "Poisson.webp",
       "name": "Steak de poisson",
       "price": 2
     },
-    "vegetalSteak": {
+    {
       "image": "Steak-vege.webp",
       "name": "Steak végétal",
       "price": 2
+    },
+    {
+      "image": "Todo.webp",
+      "name": "Glaçons",
+      "price": 0
     }
-
-  },
-  "product": {
-    "café": {
+  ],
+  "product": [
+    {
       "image": "Cafe.webp",
       "name": "Café",
       "price": 1,
       "type": "drink",
-      "composition": {}
+      "ingredientNameList": []
     },
-    "coke": {
+    {
       "image": "Coca.webp",
       "name": "Coca-Cola",
       "price": 1.5,
       "type": "drink",
-      "composition": {
-        "ice": {"ingredient": "ice", "defaultQuantity": 1}
-      }
+      "ingredientNameList": [
+        {"ingredientName": "Glaçons", "quantity": 1}
+      ]
     },
-    "cookie": {
+    {
       "image": "Cookie.webp",
       "name": "Cookie",
       "price": 2,
       "type": "side",
-      "composition": {}
+      "ingredientNameList": []
     },
-    "couscous": {
+    {
       "image": "Couscous.webp",
       "name": "Couscous",
       "price": 12.99,
       "type": "main",
-      "composition": {}
+      "ingredientNameList": []
     },
-    "water": {
+    {
       "image": "Eau.webp",
       "name": "Eau",
       "price": 3,
       "type": "drink",
-      "composition": {}
+      "ingredientNameList": [{"ingredientName": "Glaçons", "quantity": 1}]
     },
-    "fish":{
-      "image": "Fish.webp",
-      "name": "Poisson",
+    {
+      "image": "LeFish.webp",
+      "name": "Le Fish",
       "price": 10.99,
       "type": "main",
-      "composition": {
-        "pickle": {"ingredient": "pickles", "defaultQuantity": 1},
-        "salad": {"ingredient": "salad", "defaultQuantity": 1},
-        "burgerBun": {"ingredient": "burgerBun", "defaultQuantity": 1}
-      }
+      "ingredientNameList": [
+        {"ingredientName": "Cornichon", "quantity": 1},
+        {"ingredientName": "Salade", "quantity": 1},
+        {"ingredientName": "Pain burger", "quantity": 1}
+      ]
     },
-    "fries": {
+    {
       "image": "Frites.webp",
       "name": "Frites",
       "price": 4,
       "type": "side",
-      "composition": {
-        "friesBacon": {"ingredient": "friesBacon", "defaultQuantity": 0},
-        "friesCheddar": {"ingredient": "friesCheddar", "defaultQuantity": 0}
-      }
+      "ingredientNameList": [
+        {"ingredientName": "Frites au Bacon", "quantity": 0},
+        {"ingredientName": "Frites au Cheddar", "quantity": 0}
+      ]
     },
-    "friesXl": {
+    {
       "image": "Frites.webp",
       "name": "Frites XL",
       "price": 6,
       "type": "side",
-      "composition": {
-        "friesBacon": {"ingredient": "friesBacon", "defaultQuantity": 0},
-        "friesCheddar": {"ingredient": "friesCheddar", "defaultQuantity": 0}
-      }
+      "ingredientNameList": [
+        {"ingredientName": "Frites au Bacon", "quantity": 0},
+        {"ingredientName": "Frites au Cheddar", "quantity": 0}
+      ]
     },
-    "iceCream": {
+    {
       "image": "Glace.webp",
       "name": "Glace",
       "price": 3,
       "type": "side",
-      "composition": {}
+      "ingredientNameList": []
     },
-    "appleJuice": {
+    {
       "image": "JusDePomme.webp",
       "name": "Jus de pomme",
       "price": 3,
       "type": "drink",
-      "composition": {
-        "ice": {"ingredient": "ice", "defaultQuantity": 1}
-      }
+      "ingredientNameList": [
+        {"ingredientName": "Glaçons", "quantity": 1}
+      ]
     },
-    "leDalleux": {
+    {
       "image": "LeDalleux.jpg",
       "name": "Le Dalleux",
       "price": 10.99,
       "type": "main",
-      "composition": {
-        "burgerBun": {"ingredient": "burgerBun", "defaultQuantity": 1},
-        "steak": {"ingredient": "steak", "defaultQuantity": 1},
-        "pickles": {"ingredient": "pickles", "defaultQuantity": 1},
-        "friedOnions": {"ingredient": "friedOnions", "defaultQuantity": 1},
-        "cheddar": {"ingredient": "cheddar", "defaultQuantity": 1},
-        "bacon": {"ingredient": "bacon", "defaultQuantity": 1}
-      }
+      "ingredientNameList": [
+        {"ingredientName": "Pain burger", "quantity": 1},
+        {"ingredientName": "Steak", "quantity": 1},
+        {"ingredientName": "Cornichon", "quantity": 1},
+        {"ingredientName": "Oignons frits", "quantity": 1},
+        {"ingredientName": "Cheddar", "quantity": 1},
+        {"ingredientName": "Bacon", "quantity": 1}
+      ]
     },
-    "leDalleuxXL": {
+    {
       "image": "LeDalleuxXL.jpg",
       "name": "Le Dalleux XL",
       "price": 12.99,
       "type": "main",
-      "composition": {
-        "burgerBun": {"ingredient": "burgerBun", "defaultQuantity": 1},
-        "steak": {"ingredient": "steak", "defaultQuantity": 2},
-        "pickles": {"ingredient": "pickles", "defaultQuantity": 1},
-        "friedOnions": {"ingredient": "friedOnions", "defaultQuantity": 1},
-        "cheddar": {"ingredient": "cheddar", "defaultQuantity": 2},
-        "bacon": {"ingredient": "bacon", "defaultQuantity": 1}
-      }
+      "ingredientNameList": [
+        {"ingredientName": "Pain burger", "quantity": 1},
+        {"ingredientName": "Steak", "quantity": 2},
+        {"ingredientName": "Cornichon", "quantity": 1},
+        {"ingredientName": "Oignons frits", "quantity": 1},
+        {"ingredientName": "Cheddar", "quantity": 2},
+        {"ingredientName": "Bacon", "quantity": 1}
+      ]
     },
-    "leDoggo": {
+    {
       "image": "LeDoggo.jpg",
       "name": "Le Doggo",
       "price": 10.99,
       "type": "main",
-      "composition": {
-        "burgerBun": {"ingredient": "burgerBun", "defaultQuantity": 1},
-        "steak": {"ingredient": "steak", "defaultQuantity": 1},
-        "tomatoes": {"ingredient": "tomatoes", "defaultQuantity": 1},
-        "salad": {"ingredient": "salad", "defaultQuantity": 1},
-        "pickles": {"ingredient": "pickles", "defaultQuantity": 1}
-      }
+      "ingredientNameList": [
+        {"ingredientName": "Pain burger", "quantity": 1},
+        {"ingredientName": "Steak", "quantity": 1},
+        {"ingredientName": "Tomate", "quantity": 1},
+        {"ingredientName": "Salade", "quantity": 1},
+        {"ingredientName": "Cornichon", "quantity": 1}
+      ]
     },
-    "muffin": {
+    {
       "image": "Muffin.webp",
       "name": "Muffin",
       "price": 3,
       "type": "side",
-      "composition": {}
+      "ingredientNameList": []
     },
-    "onionsRing": {
+    {
       "image": "Onion-Rings.webp",
       "name": "Onions Rings",
       "price": 4,
       "type": "side",
-      "composition": {}
+      "ingredientNameList": []
     },
-    "pepsi": {
+    {
       "image": "Pepsi.webp",
       "name": "Pepsi",
       "price": 2,
       "type": "drink",
-      "composition": {
-        "ice": {"ingredient": "ice", "defaultQuantity": 1}
-      }
+      "ingredientNameList": [
+        {"ingredientName": "Glaçons", "quantity": 1}
+      ]
     },
-    "chickenWings": {
+    {
       "image": "Poulet.webp",
       "name": "Chicken Wings",
       "price": 5.99,
       "type": "side",
-      "composition": {}
+      "ingredientNameList": []
     },
-    "redbull": {
+    {
       "image": "Redbull.webp",
       "name": "Redbull",
       "price": 3,
       "type": "drink",
-      "composition": {
-        "ice": {"ingredient": "ice", "defaultQuantity": 1}
-      }
+      "ingredientNameList": [
+        {"ingredientName": "Glaçons", "quantity": 1}
+      ]
     },
-    "fruitSalad": {
-      "image": "Salade-fruits.webp",
+    {
+      "image": "Salade-Fruits.webp",
       "name": "Salade de fruits",
       "price": 3,
       "type": "side",
-      "composition": {}
+      "ingredientNameList": []
     },
-    "salad": {
+    {
       "image": "Salade.webp",
       "name": "Salade",
       "price": 4,
       "type": "side",
-      "composition": {}
+      "ingredientNameList": []
     },
-    "sandwich": {
+    {
       "image": "Sandwich.webp",
       "name": "Sandwich",
       "price": 8.99,
       "type": "main",
-      "composition": {
-        "salad": {"ingredient": "salad", "defaultQuantity": 1},
-        "tomatoes": {"ingredient": "tomatoes", "defaultQuantity": 1},
-        "eggs": {"ingredient": "eggs", "defaultQuantity": 1}
-      }
+      "ingredientNameList": [
+        {"ingredientName": "Salade", "quantity": 1},
+        {"ingredientName": "Tomate", "quantity": 1},
+        {"ingredientName": "Oeuf", "quantity": 1}
+      ]
     },
-    "superBacon": {
+    {
       "image": "superBacon.jpg",
       "name": "Super Bacon",
       "price": 11.99,
       "type": "main",
-      "composition": {
-        "tomatoes": {"ingredient": "tomatoes", "defaultQuantity": 1},
-        "salad": {"ingredient": "salad", "defaultQuantity": 1},
-        "burgerBun": {"ingredient": "burgerBun", "defaultQuantity": 1},
-        "bacon": {"ingredient": "bacon", "defaultQuantity": 2},
-        "steak": {"ingredient": "steak", "defaultQuantity": 1}
-      }
+      "ingredientNameList": [
+        {"ingredientName": "Tomate", "quantity": 1},
+        {"ingredientName": "Salade", "quantity": 1},
+        {"ingredientName": "Pain burger", "quantity": 1},
+        {"ingredientName": "Bacon", "quantity": 2},
+        {"ingredientName": "Steak", "quantity": 1}
+      ]
     },
-    "sushi": {
+    {
       "image": "Sushi.webp",
       "name": "Sushi",
       "price": 30.99,
       "type": "main",
-      "composition": {}
+      "ingredientNameList": []
     }, 
-    "tenders": {
+    {
       "image": "Tenders.webp",
       "name": "Tenders",
       "price": 6.99,
       "type": "side",
-      "composition": {}
+      "ingredientNameList": []
     },
-    "leVeggie": {
+    {
       "image": "Veggie.webp",
       "name": "Le Veggie",
       "price": 9.99,
       "type": "main",
-      "composition": {
-        "salad": {"ingredient": "salad", "defaultQuantity": 1},
-        "tomatoes": {"ingredient": "tomatoes", "defaultQuantity": 1},
-        "pickles": {"ingredient": "pickles", "defaultQuantity": 1},
-        "friedOnions": {"ingredient": "friedOnions", "defaultQuantity": 1},
-        "burgerBun": {"ingredient": "burgerBun", "defaultQuantity": 1},
-        "steak": {"ingredient": "steak", "defaultQuantity": 1}
-      }
+      "ingredientNameList": [
+        {"ingredientName": "Salade", "quantity": 1},
+        {"ingredientName": "Tomate", "quantity": 1},
+        {"ingredientName": "Cornichon", "quantity": 1},
+        {"ingredientName": "Oignons frits", "quantity": 1},
+        {"ingredientName": "Pain burger", "quantity": 1},
+        {"ingredientName": "Steak", "quantity": 1}
+      ]
     }
-  },
-  "menu":{
-    "menuDalleux": {
+  ],
+  "menu": [
+    {
       "image": "Menu-Dalleux.webp",
       "name": "Menu Dalleux",
       "price": 14.99,
       "composition": {
-        "main": "leDalleux"
+        "main": "Le Dalleux"
       }
     },
-    "menuDoggo": {
+    {
       "image": "Menu-Doggo.webp",
       "name": "Menu Doggo",
       "price": 14.99,
       "composition": {
-        "main": "leDoggo"
+        "main": "Le Doggo"
       }
     },
-    "menuFish": {
+    {
       "image": "Menu-Fish.webp",
       "name": "Menu Fish",
       "price": 14.99,
       "composition": {
-        "main": "fish"
+        "main": "Le Fish"
       }
     },
-    "menuSuperBacon": {
+    {
       "image": "Menu-SuperBacon.webp",
       "name": "Menu Super Bacon",
       "price": 15.99,
       "composition": {
-        "main": "superBacon"
+        "main": "Super Bacon"
       }
     },
-    "menuVeggie": {
+    {
       "image": "Menu-Veggie.webp",
       "name": "Menu Veggie",
       "price": 13.99,
       "composition": {
-        "main": "leVeggie"
+        "main": "Le Veggie"
       }
     }
-  },
-  "categorie": {
-    "burger": {
+  ],
+  "category": [
+    {
+      "image": "Todo.webp",
+      "name": "Nos offres",
+      "productNameList": ["Onions Rings"],
+      "menuNameList": ["Menu Doggo", "Menu Super Bacon"]
+    },
+    {
       "image": "LeDalleux.webp",
       "name": "Burger",
-      "productList": ["leDalleux", "leDalleuxXL", "leDoggo", "superBacon", "leVeggie"],
-      "menuList": ["menuDalleux", "menuDoggo", "menuSuperBacon", "menuVeggie", "menuFish"]
+      "productNameList": ["Le Dalleux", "Le Dalleux XL", "Le Doggo", "Super Bacon", "Le Veggie", "Le Fish"],
+      "menuNameList": ["Menu Dalleux", "Menu Doggo", "Menu Super Bacon", "Menu Veggie", "Menu Fish"]
     },
-    "drink": {
+    {
       "image": "boisson.webp",
       "name": "Boisson",
-      "productList": ["coke", "pepsi", "redbull", "water", "café", "appleJuice"],
-      "menuList": []
+      "productNameList": ["Coca-Cola", "Pepsi", "Redbull", "Eau", "Café", "Jus de pomme"],
+      "menuNameList": []
     },
-    "side": {
+    {
       "image": "frites.webp",
       "name": "Accompagnement",
-      "productList": ["fries", "friesXl", "onionsRing", "chickenWings", "tenders", "salad"],
-      "menuList": []
+      "productNameList": ["Frites", "Frites XL", "Onions Rings", "Chicken Wings", "Tenders", "Salade"],
+      "menuNameList": []
     },
-    "sushi": {
+    {
       "image": "Sushi.webp",
       "name": "Sushi",
-      "productList": ["sushi"],
-      "menuList": []
+      "productNameList": ["Sushi"],
+      "menuNameList": []
     },
-    "couscous": {
+    {
       "image": "Couscous.webp",
       "name": "Couscous",
-      "productList": ["couscous"],
-      "menuList": []
+      "productNameList": ["Couscous"],
+      "menuNameList": []
     },
-    "dessert": {
+    {
       "image": "Cookie.webp",
       "name": "Dessert",
-      "productList": ["fruitSalad", "muffin", "iceCream", "cookie"],
-      "menuList": []
+      "productNameList": ["Salade de fruits", "Muffin", "Glace", "Cookie"],
+      "menuNameList": []
     }
-  }
+  ]
 }

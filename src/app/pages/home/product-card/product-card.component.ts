@@ -4,7 +4,7 @@ import {
     computed,
     input,
 } from '@angular/core';
-import { Menu } from '../../../core/models/menu.type';
+import { Product } from '../../../core/models/product.type';
 
 const priceFormat = new Intl.NumberFormat('fr-FR', {
     maximumFractionDigits: 2,
@@ -19,8 +19,14 @@ const priceFormat = new Intl.NumberFormat('fr-FR', {
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductCardComponent {
-    menu = input.required<Menu>();
+    product = input.required<Product>();
 
-    imageUrl = computed(() => `./assets/menu/${this.menu().image}`);
-    oldPrice = computed(() => priceFormat.format(this.menu().price + 3));
+    imageUrl = computed(() => `./assets/product/${this.product().meta.image}`);
+    oldPrice = computed(() =>
+        priceFormat.format(this.product().meta.price + 3),
+    );
+
+    showDetails() {
+        return;
+    }
 }
