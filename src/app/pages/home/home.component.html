@@ -5,15 +5,17 @@
         [(selectedCategoryName)]="selectedCategoryName"
     />
     <div class="column-product">
-        <h2>Menus</h2>
-        <div class="product-container">
-            @for (menu of menuList(); track menu.meta.name) {
-                <app-product-card
-                    [product]="menu.selectedComposition().main!"
-                />
-            }
-        </div>
-        <hr />
+        @if (menuList().length > 0) {
+            <h2>Menus</h2>
+            <div class="product-container">
+                @for (menu of menuList(); track menu.meta.name) {
+                    <app-product-card
+                        [product]="menu.selectedComposition().main!"
+                    />
+                }
+            </div>
+            <hr />
+        }
         <h2>A l'unité</h2>
         <div class="product-container">
             @for (product of productList(); track product.meta.name) {
