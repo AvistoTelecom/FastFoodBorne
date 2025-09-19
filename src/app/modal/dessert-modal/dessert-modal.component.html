@@ -1,0 +1,16 @@
+<div class="modal">
+    <h2 class="title">Un petit dessert ?</h2>
+    <div class="dessert-wrapper">
+        @for (dessert of dessertList; track dessert.meta.name) {
+            <app-modal-product
+                [product]="dessert"
+                [selected]="selected()"
+                (selectedChange)="onSelection($event)"
+            />
+        }
+    </div>
+    <div class="button-wrapper">
+        <button class="cancel-button" (click)="onCancel()">Annuler</button>
+        <button class="validate-button" (click)="onValidate()">Valider</button>
+    </div>
+</div>

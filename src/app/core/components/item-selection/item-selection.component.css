@@ -1,0 +1,18 @@
+.item-selection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  height: 200px;
+  width: 200px;
+  border-radius: 10%;
+  border-color: gray;
+  border-style: solid;
+  border-width: 1px;
+}
+
+img{
+  height: 76.5px;
+  width: 100px;
+  margin-top: 10px;
+}

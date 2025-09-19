@@ -1,8 +1,6 @@
-@if (menu(); as menu) {
-    <img [src]="imageUrl()" [alt]="menu.name" />
-    <h2>{{ menu.name }}</h2>
-    <p class="price">
-        <span class="old">{{ oldPrice() }}€</span><b>{{ menu.price }}€</b>
-    </p>
-    <button>+ d'infos</button>
-}
+<img [src]="imageUrl()" [alt]="product().meta.name" />
+<h2>{{ product().meta.name }}</h2>
+<p class="price">
+    <span class="old">{{ oldPrice() }}€</span><b>{{ product().meta.price }}€</b>
+</p>
+<button (click)="showDetails()">+ d'infos</button>
