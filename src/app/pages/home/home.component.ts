@@ -7,10 +7,12 @@ import {
     signal,
 } from '@angular/core';
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
-import { ProductCardComponent } from './product-card/product-card.component';
+import { ItemCardComponent } from './item-card/item-card.component';
 import { ProductCarouselComponent } from './product-carousel/product-carousel.component';
 import { MenuService } from '../../core/services/menu.service';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { Menu } from '../../core/models/menu.type';
+import { Product } from '../../core/models/product.type';
 
 @Component({
     selector: 'app-home',
@@ -19,7 +21,7 @@ import { RouterModule } from '@angular/router';
         CommonModule,
         RouterModule,
         HeaderImageComponent,
-        ProductCardComponent,
+        ItemCardComponent,
         ProductCarouselComponent,
     ],
     templateUrl: './home.component.html',
@@ -28,6 +30,7 @@ import { RouterModule } from '@angular/router';
 })
 export class HomeComponent {
     readonly menuService = inject(MenuService);
+    readonly router = inject(Router);
     readonly categoryList = this.menuService.getCategoryList();
     readonly selectedCategoryName = signal('Nos offres');
 
@@ -44,4 +47,18 @@ export class HomeComponent {
     readonly menuList = computed(() =>
         this.menuService.getMenuListOfACategory(this.selectedCategory()),
     );
+
+    onMenuSelected(menu: Menu): void {
+        console.log(menu);
+        this.router.navigate(['/main-composition'], {
+            queryParams: { menuName: menu.meta.name },
+        });
+        return;
+    }
+    onProductSelected(product: Product): void {
+        this.router.navigate(['/main-composition'], {
+            queryParams: { productName: product.meta.name },
+        });
+        return;
+    }
 }

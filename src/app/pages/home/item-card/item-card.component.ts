@@ -3,6 +3,7 @@ import {
     Component,
     computed,
     input,
+    output,
 } from '@angular/core';
 import { Product } from '../../../core/models/product.type';
 import { Menu } from '../../../core/models/menu.type';
@@ -12,19 +13,18 @@ const priceFormat = new Intl.NumberFormat('fr-FR', {
 });
 
 @Component({
-    selector: 'app-product-card',
+    selector: 'app-item-card',
     standalone: true,
     imports: [],
-    templateUrl: './product-card.component.html',
-    styleUrl: './product-card.component.css',
+    templateUrl: './item-card.component.html',
+    styleUrl: './item-card.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProductCardComponent {
-    product = input.required<Product | Menu>();
+export class ItemCardComponent {
+    item = input.required<Product | Menu>();
+    itemSelected = output();
 
-    oldPrice = computed(() =>
-        priceFormat.format(this.product().meta.price + 3),
-    );
+    oldPrice = computed(() => priceFormat.format(this.item().meta.price + 3));
 
     showDetails() {
         return;

@@ -9,7 +9,10 @@
             <h2>Menus</h2>
             <div class="product-container">
                 @for (menu of menuList(); track menu.meta.name) {
-                    <app-product-card [product]="menu" />
+                    <app-item-card
+                        [item]="menu"
+                        (itemSelected)="onMenuSelected(menu)"
+                    />
                 }
             </div>
             <hr />
@@ -17,7 +20,10 @@
         <h2>A l'unité</h2>
         <div class="product-container">
             @for (product of productList(); track product.meta.name) {
-                <app-product-card [product]="product" />
+                <app-item-card
+                    [item]="product"
+                    (itemSelected)="onProductSelected(product)"
+                />
             }
         </div>
     </div>

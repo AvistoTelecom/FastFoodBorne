@@ -1,0 +1,12 @@
+<button
+    [class.selected-product]="selected()"
+    (click)="selected.set(!selected())"
+>
+    <img [src]="image()" [alt]="title()" />
+    <h2>{{ title() }}</h2>
+    @if (price()) {
+        <p>
+            <b>+{{ price() }}€</b>
+        </p>
+    }
+</button>

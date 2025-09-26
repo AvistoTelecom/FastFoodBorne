@@ -1,0 +1,18 @@
+<app-header-image [withPub]="true" />
+<div>
+    <h1>{{ menu().meta.name }}</h1>
+    <h2>Plat principal</h2>
+    <h3>Taille</h3>
+    <div>
+        <app-product-selector
+            [image]="'./assets/menu/' + menu().meta.image"
+            [title]="'classique'"
+        />
+        <app-product-selector
+            [image]="'./assets/menu/' + menu().meta.image"
+            [title]="'XL'"
+            [price]="1.99"
+        />
+    </div>
+    <h3>Suppléments</h3>
+</div>

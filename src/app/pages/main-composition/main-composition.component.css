@@ -1,3 +1,25 @@
 :host {
   display: block;
 }
+
+h1{
+  text-align: center;
+  margin-top: 4px;
+  font-family: Interstate, sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+}
+
+h2 {
+  font-family: Interstate, sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  margin-left: 16px;
+}
+
+h3 {
+  font-family: Interstate, sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  margin-left: 16px;
+}

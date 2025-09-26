@@ -1,0 +1,9 @@
+<button (click)="itemSelected.emit()">
+    <img [src]="item().image()" [alt]="item().meta.name" draggable="false" />
+    <h2>{{ item().meta.name }}</h2>
+    <p class="price">
+        <span class="old">{{ oldPrice() }}€</span
+        ><b>{{ item().meta.price }}€</b>
+    </p>
+</button>
+<button class="detail-button" (click)="showDetails()">+ d'infos</button>

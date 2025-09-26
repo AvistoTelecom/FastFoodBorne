@@ -44,6 +44,17 @@ export class MenuService {
             });
     }
 
+    getMenuByName(name: string): Menu {
+        const menuMeta = productList.menu.find((menu) => menu.name === name);
+        if (!menuMeta) {
+            throw new Error(`Menu ${name} not found`);
+        }
+        return new Menu(
+            menuMeta,
+            this.getProductByName(menuMeta.composition.main),
+        );
+    }
+
     getIngredientByName(name: string): Ingredient {
         const ingredient = productList.ingredient.find(
             (ingredient) => ingredient.name === name,
