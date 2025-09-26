@@ -23,3 +23,11 @@ h3 {
   font-size: 32px;
   margin-left: 16px;
 }
+
+.product-selector-wrapper{
+  padding-left: 48px;
+  display: flex;
+  justify-content: start;
+  gap: 32px;
+  flex-wrap: wrap;
+}

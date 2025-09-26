@@ -7,7 +7,7 @@ import {
     signal,
 } from '@angular/core';
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
-import { ItemCardComponent } from './item-card/item-card.component';
+import { HomeItemCardComponent } from './home-item-card/home-item-card.component';
 import { ProductCarouselComponent } from './product-carousel/product-carousel.component';
 import { MenuService } from '../../core/services/menu.service';
 import { Router, RouterModule } from '@angular/router';
@@ -21,7 +21,7 @@ import { Product } from '../../core/models/product.type';
         CommonModule,
         RouterModule,
         HeaderImageComponent,
-        ItemCardComponent,
+        HomeItemCardComponent,
         ProductCarouselComponent,
     ],
     templateUrl: './home.component.html',

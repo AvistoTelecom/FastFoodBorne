@@ -13,14 +13,14 @@ const priceFormat = new Intl.NumberFormat('fr-FR', {
 });
 
 @Component({
-    selector: 'app-item-card',
+    selector: 'app-home-item-card',
     standalone: true,
     imports: [],
-    templateUrl: './item-card.component.html',
-    styleUrl: './item-card.component.css',
+    templateUrl: './home-item-card.component.html',
+    styleUrl: './home-item-card.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ItemCardComponent {
+export class HomeItemCardComponent {
     item = input.required<Product | Menu>();
     itemSelected = output();
 
