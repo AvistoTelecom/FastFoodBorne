@@ -1,28 +1,25 @@
 <app-header-image [withPub]="true" />
-<div>
-    <h1>{{ menu().meta.name }}</h1>
-    <h2>Plat principal</h2>
+<h1>{{ menu().meta.composition.main }}</h1>
+<main>
+    <h2>Burger</h2>
     <h3>Taille</h3>
     <div class="product-selector-wrapper">
-        <app-product-selector
-            [image]="'./assets/menu/' + menu().meta.image"
-            [title]="'classique'"
-        />
-        <app-product-selector
-            [image]="'./assets/menu/' + menu().meta.image"
-            [title]="'XL'"
-            [price]="1.99"
-        />
-        <app-product-selector
-            [image]="'./assets/menu/' + menu().meta.image"
-            [title]="'XL'"
-            [price]="1.99"
-        />
-        <app-product-selector
-            [image]="'./assets/menu/' + menu().meta.image"
-            [title]="'XL'"
-            [price]="1.99"
-        />
+        @for (sizeOption of availableSizeOption; track sizeOption.name) {
+            <app-product-selector
+                [image]="'./assets/menu/' + menu().meta.image"
+                [price]="sizeOption.price"
+                [title]="sizeOption.name"
+                [selected]="selectedSize() === sizeOption.name"
+                (isSelected)="selectSize(sizeOption.name)"
+            />
+        }
+    </div>
+    <h3>Composition</h3>
+    <div class="product-selector-wrapper"></div>
+    <div class="product-selector-wrapper">
+        @for (ingredient of ingredientList(); track ingredient.ingredientName) {
+            <app-ingredient-card [ingredient]="ingredient" />
+        }
     </div>
     <h3>Suppléments</h3>
-</div>
+</main>

@@ -50,7 +50,7 @@ export class HomeComponent {
 
     onMenuSelected(menu: Menu): void {
         console.log(menu);
-        this.router.navigate(['/main-composition'], {
+        this.router.navigate(['/menu-composition'], {
             queryParams: { menuName: menu.meta.name },
         });
         return;

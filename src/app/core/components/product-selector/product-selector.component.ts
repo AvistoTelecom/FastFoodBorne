@@ -3,7 +3,7 @@ import {
     Component,
     ChangeDetectionStrategy,
     input,
-    model,
+    output,
 } from '@angular/core';
 
 @Component({
@@ -18,5 +18,10 @@ export class ProductSelectorComponent {
     image = input.required<string>();
     title = input.required<string>();
     price = input<number>();
-    selected = model<boolean>(false);
+    selected = input<boolean>(false);
+    isSelected = output<void>();
+
+    isClicked() {
+        this.isSelected.emit();
+    }
 }

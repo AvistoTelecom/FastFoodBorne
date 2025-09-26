@@ -4,7 +4,7 @@
 
 h1{
   text-align: center;
-  margin-top: 4px;
+  margin-top: 20px;
   font-family: Interstate, sans-serif;
   font-weight: 700;
   font-size: 48px;
@@ -25,9 +25,12 @@ h3 {
 }
 
 .product-selector-wrapper{
-  padding-left: 48px;
   display: flex;
   justify-content: start;
   gap: 32px;
   flex-wrap: wrap;
+}
+
+main {
+  padding: 10px 40px;
 }

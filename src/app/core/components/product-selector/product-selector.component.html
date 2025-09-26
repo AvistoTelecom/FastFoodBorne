@@ -1,7 +1,4 @@
-<button
-    [class.selected-product]="selected()"
-    (click)="selected.set(!selected())"
->
+<button [class.selected-product]="selected()" (click)="isClicked()">
     <img [src]="image()" [alt]="title()" />
     <h2>{{ title() }}</h2>
     @if (price()) {

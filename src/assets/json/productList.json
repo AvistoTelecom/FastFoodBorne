@@ -3,7 +3,7 @@
 
     {
       "image": "Pain.webp",
-      "name": "Pain burger",
+      "name": "Pain",
       "price": 0.5
     },
     {
@@ -128,7 +128,7 @@
       "ingredientNameList": [
         {"ingredientName": "Cornichon", "quantity": 1},
         {"ingredientName": "Salade", "quantity": 1},
-        {"ingredientName": "Pain burger", "quantity": 1}
+        {"ingredientName": "Pain", "quantity": 1}
       ]
     },
     {
@@ -173,7 +173,7 @@
       "price": 10.99,
       "type": "main",
       "ingredientNameList": [
-        {"ingredientName": "Pain burger", "quantity": 1},
+        {"ingredientName": "Pain", "quantity": 1},
         {"ingredientName": "Steak", "quantity": 1},
         {"ingredientName": "Cornichon", "quantity": 1},
         {"ingredientName": "Oignons frits", "quantity": 1},
@@ -187,7 +187,7 @@
       "price": 12.99,
       "type": "main",
       "ingredientNameList": [
-        {"ingredientName": "Pain burger", "quantity": 1},
+        {"ingredientName": "Pain", "quantity": 1},
         {"ingredientName": "Steak", "quantity": 2},
         {"ingredientName": "Cornichon", "quantity": 1},
         {"ingredientName": "Oignons frits", "quantity": 1},
@@ -201,7 +201,7 @@
       "price": 10.99,
       "type": "main",
       "ingredientNameList": [
-        {"ingredientName": "Pain burger", "quantity": 1},
+        {"ingredientName": "Pain", "quantity": 1},
         {"ingredientName": "Steak", "quantity": 1},
         {"ingredientName": "Tomate", "quantity": 1},
         {"ingredientName": "Salade", "quantity": 1},
@@ -280,7 +280,7 @@
       "ingredientNameList": [
         {"ingredientName": "Tomate", "quantity": 1},
         {"ingredientName": "Salade", "quantity": 1},
-        {"ingredientName": "Pain burger", "quantity": 1},
+        {"ingredientName": "Pain", "quantity": 1},
         {"ingredientName": "Bacon", "quantity": 2},
         {"ingredientName": "Steak", "quantity": 1}
       ]
@@ -309,7 +309,7 @@
         {"ingredientName": "Tomate", "quantity": 1},
         {"ingredientName": "Cornichon", "quantity": 1},
         {"ingredientName": "Oignons frits", "quantity": 1},
-        {"ingredientName": "Pain burger", "quantity": 1},
+        {"ingredientName": "Pain", "quantity": 1},
         {"ingredientName": "Steak", "quantity": 1}
       ]
     }
