@@ -11,8 +11,11 @@ import { HomeItemCardComponent } from './home-item-card/home-item-card.component
 import { ProductCarouselComponent } from './product-carousel/product-carousel.component';
 import { MenuService } from '../../core/services/menu.service';
 import { Router, RouterModule } from '@angular/router';
-import { Menu } from '../../core/models/menu.type';
-import { Product } from '../../core/models/product.type';
+import { CategoryConfigService } from '../../core/config/category/category-config.service';
+import { ProductConfigService } from '../../core/config/product/product-config.service';
+import { MenuConfigService } from '../../core/config/menu/menu-config.service';
+import { MenuConfig } from '../../core/config/menu/model';
+import { ProductConfig } from '../../core/config/product/model';
 
 @Component({
     selector: 'app-home',
@@ -31,33 +34,39 @@ import { Product } from '../../core/models/product.type';
 export class HomeComponent {
     readonly menuService = inject(MenuService);
     readonly router = inject(Router);
-    readonly categoryList = this.menuService.getCategoryList();
+    categoryService = inject(CategoryConfigService);
+    productService = inject(ProductConfigService);
+    menuConfigService = inject(MenuConfigService);
+
+    categoryList = this.categoryService.categoryList;
+
     readonly selectedCategoryName = signal('Nos offres');
 
-    readonly selectedCategory = computed(
-        () =>
-            this.categoryList.find(
-                (category) =>
-                    category.meta.name === this.selectedCategoryName(),
-            )!,
-    );
-    readonly productList = computed(() =>
-        this.menuService.getProductListOfACategory(this.selectedCategory()),
-    );
-    readonly menuList = computed(() =>
-        this.menuService.getMenuListOfACategory(this.selectedCategory()),
+    readonly selectedCategory = computed(() =>
+        this.categoryService.getByName(this.selectedCategoryName()),
     );
 
-    onMenuSelected(menu: Menu): void {
+    readonly productList = computed(() =>
+        this.productService.getAllProductFromCategory(
+            this.selectedCategory().name,
+        ),
+    );
+    readonly menuList = computed(() =>
+        this.menuConfigService.getAllMenuFromCategory(
+            this.selectedCategory().name,
+        ),
+    );
+
+    onMenuSelected(menu: MenuConfig): void {
         console.log(menu);
         this.router.navigate(['/menu-composition'], {
-            queryParams: { menuName: menu.meta.name },
+            queryParams: { menuName: menu.name },
         });
         return;
     }
-    onProductSelected(product: Product): void {
+    onProductSelected(product: ProductConfig): void {
         this.router.navigate(['/main-composition'], {
-            queryParams: { productName: product.meta.name },
+            queryParams: { productName: product.name },
         });
         return;
     }

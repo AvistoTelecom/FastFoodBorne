@@ -5,8 +5,8 @@ import {
     input,
     output,
 } from '@angular/core';
-import { Product } from '../../../core/models/product.type';
-import { Menu } from '../../../core/models/menu.type';
+import { ProductConfig } from '../../../core/config/product/model';
+import { MenuConfig } from '../../../core/config/menu/model';
 
 const priceFormat = new Intl.NumberFormat('fr-FR', {
     maximumFractionDigits: 2,
@@ -21,10 +21,10 @@ const priceFormat = new Intl.NumberFormat('fr-FR', {
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeItemCardComponent {
-    item = input.required<Product | Menu>();
+    item = input.required<ProductConfig | MenuConfig>();
     itemSelected = output();
 
-    oldPrice = computed(() => priceFormat.format(this.item().meta.price + 3));
+    oldPrice = computed(() => priceFormat.format(this.item().price + 3));
 
     showDetails() {
         return;

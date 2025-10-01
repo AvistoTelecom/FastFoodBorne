@@ -8,7 +8,7 @@
         @if (menuList().length > 0) {
             <h2>Menus</h2>
             <div class="product-container">
-                @for (menu of menuList(); track menu.meta.name) {
+                @for (menu of menuList(); track menu.name) {
                     <app-home-item-card
                         [item]="menu"
                         (itemSelected)="onMenuSelected(menu)"
@@ -19,7 +19,7 @@
         }
         <h2>A l'unité</h2>
         <div class="product-container">
-            @for (product of productList(); track product.meta.name) {
+            @for (product of productList(); track product.name) {
                 <app-home-item-card
                     [item]="product"
                     (itemSelected)="onProductSelected(product)"

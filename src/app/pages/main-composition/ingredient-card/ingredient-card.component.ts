@@ -16,17 +16,16 @@ import {
 })
 export class IngredientCardComponent {
     ingredient = input.required<{
-        ingredientName: string;
+        name: string;
         quantity: number;
     }>();
 
     image = computed(
-        () => `./assets/ingredient/${this.ingredient().ingredientName}.webp`,
+        () => `./assets/ingredient/${this.ingredient().name}.webp`,
     );
-    selected = input<boolean>(false);
-    isSelected = output<void>();
+    delete = output<void>();
 
-    isClicked() {
-        this.isSelected.emit();
+    deleteIngredient() {
+        this.delete.emit();
     }
 }

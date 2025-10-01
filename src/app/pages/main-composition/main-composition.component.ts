@@ -7,11 +7,10 @@ import {
     signal,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MenuService } from '../../core/services/menu.service';
-import { Menu } from '../../core/models/menu.type';
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
 import { ProductSelectorComponent } from '../../core/components/product-selector/product-selector.component';
 import { IngredientCardComponent } from './ingredient-card/ingredient-card.component';
+import { ProductConfigService } from '../../core/config/product/product-config.service';
 
 @Component({
     selector: 'app-main-composition',
@@ -28,9 +27,13 @@ import { IngredientCardComponent } from './ingredient-card/ingredient-card.compo
 })
 export class MainCompositionComponent {
     route = inject(ActivatedRoute);
-    readonly menuService = inject(MenuService);
-    menuName = this.route.snapshot.queryParams['menuName'];
-    menu = computed<Menu>(() => this.menuService.getMenuByName(this.menuName));
+    productConfigService = inject(ProductConfigService);
+
+    productName = this.route.snapshot.queryParams['productName'];
+
+    product = computed(() =>
+        this.productConfigService.getProductByName(this.productName),
+    );
 
     availableSizeOption = [
         { name: 'classic', price: undefined },
@@ -38,11 +41,13 @@ export class MainCompositionComponent {
     ];
 
     selectedSize = signal<string>('classic');
-    ingredientList = computed(
-        () => this.menu().selectedComposition().main?.meta.ingredientNameList,
-    );
+    ingredientList = computed(() => this.product().ingredientNameList);
 
     selectSize(size: string) {
         this.selectedSize.set(size);
+    }
+
+    deleteIngredient(ingredientName: string) {
+        console.log(ingredientName);
     }
 }

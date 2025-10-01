@@ -4,7 +4,7 @@ import {
     input,
     model,
 } from '@angular/core';
-import { Category } from '../../../core/models/category.type';
+import { CategoryConfig } from '../../../core/config/category/model';
 
 @Component({
     selector: 'app-product-carousel',
@@ -15,7 +15,7 @@ import { Category } from '../../../core/models/category.type';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductCarouselComponent {
-    categoryList = input.required<Category[]>();
+    categoryList = input.required<CategoryConfig[]>();
     selectedCategoryName = model.required<string>();
 
     select(selectedMenuItem: string) {

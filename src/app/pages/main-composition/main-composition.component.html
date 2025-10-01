@@ -1,12 +1,12 @@
 <app-header-image [withPub]="true" />
-<h1>{{ menu().meta.composition.main }}</h1>
+<h1>{{ product().name }}</h1>
 <main>
     <h2>Burger</h2>
     <h3>Taille</h3>
     <div class="product-selector-wrapper">
         @for (sizeOption of availableSizeOption; track sizeOption.name) {
             <app-product-selector
-                [image]="'./assets/menu/' + menu().meta.image"
+                [image]="'./assets/menu/' + product().image"
                 [price]="sizeOption.price"
                 [title]="sizeOption.name"
                 [selected]="selectedSize() === sizeOption.name"
@@ -17,8 +17,11 @@
     <h3>Composition</h3>
     <div class="product-selector-wrapper"></div>
     <div class="product-selector-wrapper">
-        @for (ingredient of ingredientList(); track ingredient.ingredientName) {
-            <app-ingredient-card [ingredient]="ingredient" />
+        @for (ingredient of ingredientList(); track ingredient.name) {
+            <app-ingredient-card
+                [ingredient]="ingredient"
+                (delete)="deleteIngredient(ingredient.name)"
+            />
         }
     </div>
     <h3>Suppléments</h3>
