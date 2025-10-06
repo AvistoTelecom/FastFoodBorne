@@ -9,7 +9,6 @@ import {
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
 import { HomeItemCardComponent } from './home-item-card/home-item-card.component';
 import { ProductCarouselComponent } from './product-carousel/product-carousel.component';
-import { MenuService } from '../../core/services/menu.service';
 import { Router, RouterModule } from '@angular/router';
 import { CategoryConfigService } from '../../core/config/category/category-config.service';
 import { ProductConfigService } from '../../core/config/product/product-config.service';
@@ -32,7 +31,7 @@ import { ProductConfig } from '../../core/config/product/model';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-    readonly menuService = inject(MenuService);
+    // readonly menuService = inject(MenuService);
     readonly router = inject(Router);
     categoryService = inject(CategoryConfigService);
     productService = inject(ProductConfigService);
@@ -58,7 +57,6 @@ export class HomeComponent {
     );
 
     onMenuSelected(menu: MenuConfig): void {
-        console.log(menu);
         this.router.navigate(['/menu-composition'], {
             queryParams: { menuName: menu.name },
         });

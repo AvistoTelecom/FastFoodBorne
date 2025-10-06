@@ -5,7 +5,7 @@ import {
     input,
     model,
 } from '@angular/core';
-import { Product } from '../../models/product.type';
+import { Product } from '../../models/product.class';
 
 @Component({
     selector: 'app-modal-product',

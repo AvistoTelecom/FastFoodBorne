@@ -1,45 +1,45 @@
-import { computed, Injectable, signal } from '@angular/core';
-import { Order } from '../models/order.type';
-import { Product } from '../models/product.type';
-import { Menu } from '../models/menu.type';
+import { computed, Injectable, Signal, signal } from '@angular/core';
+import { Product } from '../models/product.class';
+import { Menu } from '../models/menu.class';
 
 @Injectable({
     providedIn: 'root',
 })
 export class OrderService {
-    readonly order = signal<Order>([]);
+    private _productList = signal<Product[]>([]);
+    private _menuList = signal<Menu[]>([]);
 
-    totalPrice = computed<number>(() =>
-        this.order().reduce((total, orderItem) => {
-            return total + orderItem.item.price() * orderItem.quantity;
-        }, 0),
-    );
-
-    addItem(item: Product | Menu, quantity: number): void {
-        const isItemAlreadyInList = this.order().some(
-            (orderItem) => orderItem.item.meta.name === item.meta.name,
-        );
-        if (!isItemAlreadyInList) {
-            this.order.set([...this.order(), { item, quantity }]);
-            return;
-        }
-        const updatedOrder = this.order().map((orderItem) => {
-            if (orderItem.item.meta.name === item.meta.name) {
-                return {
-                    item: orderItem.item,
-                    quantity: orderItem.quantity + quantity,
-                };
-            }
-            return orderItem;
-        });
-        this.order.set([...updatedOrder]);
+    addProduct(product: Product) {
+        this._productList.set([...this._productList(), product]);
     }
 
-    removeItem(item: Product | Menu): void {
-        this.order.set(
-            this.order().filter(
-                (orderItem) => orderItem.item.meta.name !== item.meta.name,
-            ),
-        );
+    get productList() {
+        return this._productList.asReadonly();
     }
+
+    addMenu(menu: Menu) {
+        this._menuList.set([...this._menuList(), menu]);
+    }
+
+    get menuList(): Signal<Menu[]> {
+        return this._menuList.asReadonly();
+    }
+
+    totalMenuPrice = computed(() => {
+        return this._menuList().reduce(
+            (total, menu) => total + menu.totalPrice,
+            0,
+        );
+    });
+
+    totalProductPrice = computed(() => {
+        return this._productList().reduce(
+            (total, product) => total + product.totalPrice,
+            0,
+        );
+    });
+
+    totalOrderPrice = computed(() => {
+        return this.totalProductPrice() + this.totalMenuPrice();
+    });
 }

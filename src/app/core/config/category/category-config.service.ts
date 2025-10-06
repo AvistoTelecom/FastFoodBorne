@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CategoryList } from './categoryList';
+import { CategoryConfig } from './model';
 
 @Injectable({
     providedIn: 'root',
@@ -7,14 +8,14 @@ import { CategoryList } from './categoryList';
 export class CategoryConfigService {
     private readonly _categoryList = CategoryList;
 
-    get categoryList() {
+    get categoryList(): CategoryConfig[] {
         return this._categoryList.map((category) => ({
             ...category,
             image: this.formatImagePath(category.image),
         }));
     }
 
-    getByName(name: string) {
+    getByName(name: string): CategoryConfig {
         const category = this._categoryList.find(
             (category) => category.name === name,
         );

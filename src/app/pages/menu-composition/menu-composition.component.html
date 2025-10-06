@@ -1,0 +1,8 @@
+<div>
+    @for (ingredient of menu().main.ingredientList; track ingredient.name) {
+        <button (click)="onClick(ingredient)">
+            {{ ingredient.name }} ({{ ingredient.quantity }}) Add
+        </button>
+    }
+    {{ menu().totalPrice }}
+</div>

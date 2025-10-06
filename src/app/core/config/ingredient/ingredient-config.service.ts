@@ -1,6 +1,37 @@
 import { Injectable } from '@angular/core';
+import { IngredientList } from './ingredientList';
+import { IngredientConfig } from './model';
 
 @Injectable({
     providedIn: 'root',
 })
-export class IngredientConfigService {}
+export class IngredientConfigService {
+    private readonly _ingredientList = IngredientList;
+
+    get ingredientList(): IngredientConfig[] {
+        return this._ingredientList.map((ingredient) => ({
+            ...ingredient,
+            image: this.formatImagePath(ingredient.image),
+        }));
+    }
+
+    getIngredientPriceByName(name: string): number {
+        const ingredient = this.ingredientList.find(
+            (ingredient) => ingredient.name === name,
+        );
+        if (!ingredient) throw new Error('Ingredient not found by name');
+        return ingredient.price;
+    }
+
+    getIngredientByName(name: string): IngredientConfig {
+        const ingredient = this.ingredientList.find(
+            (ingredient) => ingredient.name === name,
+        );
+        if (!ingredient) throw new Error('Ingredient not found by name');
+        return ingredient;
+    }
+
+    private formatImagePath(url: string) {
+        return `assets/ingredient/${url}`;
+    }
+}
