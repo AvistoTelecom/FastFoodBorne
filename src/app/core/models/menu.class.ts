@@ -54,7 +54,7 @@ export class Menu {
 
     get sizePrice(): number {
         if (this._size === 'XL') {
-            return Menu.xlPrice();
+            return Menu.xlPrice;
         }
         return 0;
     }
