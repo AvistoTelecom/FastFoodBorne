@@ -4,8 +4,13 @@ import { Product } from './product.class';
 export class Menu {
     readonly config: MenuConfig;
     readonly main: Product;
+    private _size: 'classic' | 'XL';
     private _side: Product | null;
     private _drink: Product | null;
+
+    static xlPrice(): number {
+        return 1.99;
+    }
 
     get side(): Product | null {
         return this._side;
@@ -18,6 +23,7 @@ export class Menu {
     constructor(config: MenuConfig, main: Product) {
         this.config = config;
         this.main = main;
+        this._size = 'classic';
         this._side = null;
         this._drink = null;
     }
@@ -31,6 +37,9 @@ export class Menu {
     get image(): string {
         return this.config.image;
     }
+    get size(): 'classic' | 'XL' {
+        return this._size;
+    }
 
     changeSide(side: Product) {
         this._side = side;
@@ -40,10 +49,21 @@ export class Menu {
         this._drink = drink;
     }
 
+    changeSize(size: 'classic' | 'XL') {
+        this._size = size;
+    }
+
+    get sizePrice(): number {
+        if (this._size === 'XL') {
+            return Menu.xlPrice();
+        }
+        return 0;
+    }
+
     get totalPrice(): number {
         return [this.main, this._side, this._drink].reduce((total, product) => {
             if (!product) return total;
             return total + product.supplementPrice;
-        }, this.price);
+        }, this.price + this.sizePrice);
     }
 }
