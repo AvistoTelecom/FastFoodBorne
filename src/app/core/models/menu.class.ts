@@ -8,9 +8,8 @@ export class Menu {
     private _side: Product | null;
     private _drink: Product | null;
 
-    static xlPrice(): number {
-        return 1.99;
-    }
+    static sizeSelectionList = ['classic', 'XL'] as const;
+    static xlPrice = 1.99;
 
     get side(): Product | null {
         return this._side;
