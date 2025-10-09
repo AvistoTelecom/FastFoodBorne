@@ -7,14 +7,14 @@ import {
 import { Ingredient } from '../../models/ingredient.class';
 
 @Component({
-    selector: 'app-ingredient-card',
+    selector: 'app-supplement-card',
     standalone: true,
     imports: [],
-    templateUrl: './ingredient-card.component.html',
-    styleUrl: './ingredient-card.component.css',
+    templateUrl: './supplement-card.component.html',
+    styleUrl: './supplement-card.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class IngredientCardComponent {
+export class SupplementCardComponent {
     ingredient = input.required<Ingredient>();
 
     remove = output<void>();

@@ -16,6 +16,7 @@ export class ProductService {
             this.ingredientService.getIngredientListByQuantifiedList(
                 productConfig.ingredientNameList,
             );
-        return new Product(productConfig, ingredientList);
+        const supplementList = this.ingredientService.getSupplementList();
+        return new Product(productConfig, ingredientList, supplementList);
     }
 }

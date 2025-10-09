@@ -9,11 +9,8 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
 import { ProductSelectorComponent } from '../../core/components/product-selector/product-selector.component';
-import { IngredientCardComponent } from '../../core/components/ingredient-card/ingredient-card.component';
-import { ProductConfigService } from '../../core/config/product/product-config.service';
-import { supplementNameList } from '../../core/config/supplement/supplementNameList';
-import { Ingredient } from '../../core/models/ingredient.class';
 import { IngredientConfigService } from '../../core/config/ingredient/ingredient-config.service';
+import { ProductConfigService } from '../../core/config/product/product-config.service';
 import { Menu } from '../../core/models/menu.class';
 
 @Component({
@@ -23,7 +20,7 @@ import { Menu } from '../../core/models/menu.class';
         CommonModule,
         HeaderImageComponent,
         ProductSelectorComponent,
-        IngredientCardComponent,
+        // IngredientCardComponent,
     ],
     templateUrl: './main-composition.component.html',
     styleUrl: './main-composition.component.css',
@@ -39,16 +36,6 @@ export class MainCompositionComponent {
 
     readonly product = computed(() =>
         this.productConfigService.getProductByName(this.productName),
-    );
-
-    readonly supplementList = signal<Ingredient[]>(
-        supplementNameList.map((ingredientName) => {
-            const ingredientConfig =
-                this.ingredientConfigService.getIngredientByName(
-                    ingredientName,
-                );
-            return new Ingredient(ingredientConfig, 0);
-        }),
     );
 
     selectedSize = signal<string>('classic');

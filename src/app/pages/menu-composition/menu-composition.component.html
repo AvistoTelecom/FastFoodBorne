@@ -30,12 +30,12 @@
         </div>
     }
     <h3>Suppléments</h3>
-    <!-- <div class="product-selector-wrapper">
-        @for (supplement of supplementList(); track supplement.name) {
-            <app-ingredient-card
+    <div class="product-selector-wrapper">
+        @for (supplement of menu().main.supplementList; track supplement.name) {
+            <app-supplement-card
                 [ingredient]="supplement"
-                (delete)="deleteIngredient(supplement.name)"
+                (delete)="supplement.removeQuantity()"
             />
         }
-    </div> -->
+    </div>
 </main>

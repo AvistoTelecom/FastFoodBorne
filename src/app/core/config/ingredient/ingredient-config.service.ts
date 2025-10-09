@@ -23,7 +23,7 @@ export class IngredientConfigService {
     }
 
     getIngredientListByNameList(nameList: string[]): IngredientConfig[] {
-        return this._ingredientList.filter((ingredient) =>
+        return this.ingredientList.filter((ingredient) =>
             nameList.includes(ingredient.name),
         );
     }

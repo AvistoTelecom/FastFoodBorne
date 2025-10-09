@@ -6,18 +6,18 @@ export class Product {
     readonly image: string;
     readonly price: number;
     readonly ingredientList: Ingredient[];
-    private _supplementList: Ingredient[];
+    readonly supplementList: Ingredient[];
 
-    constructor(config: ProductConfig, ingredientList: Ingredient[]) {
+    constructor(
+        config: ProductConfig,
+        ingredientList: Ingredient[],
+        supplementList: Ingredient[],
+    ) {
         this.name = config.name;
         this.image = config.image;
         this.price = config.price;
         this.ingredientList = ingredientList;
-        this._supplementList = [];
-    }
-
-    get supplementList() {
-        return this._supplementList;
+        this.supplementList = supplementList;
     }
 
     get totalPrice(): number {
@@ -30,17 +30,6 @@ export class Product {
         return this.totalSupplementPrice + this.totalIngredientPrice;
     }
 
-    addSupplement(ingredient: Ingredient): void {
-        const supplement = this._supplementList.find(
-            (supplement) => supplement.name === ingredient.name,
-        );
-        if (supplement) {
-            supplement.addQuantity();
-            return;
-        }
-        this._supplementList.push(ingredient);
-    }
-
     private get totalIngredientPrice(): number {
         return this.ingredientList.reduce(
             (total, ingredient) => total + ingredient.totalPrice,
@@ -49,7 +38,7 @@ export class Product {
     }
 
     private get totalSupplementPrice(): number {
-        return this._supplementList.reduce(
+        return this.supplementList.reduce(
             (total, ingredient) => total + ingredient.totalPrice,
             0,
         );

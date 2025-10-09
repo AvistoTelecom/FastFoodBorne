@@ -3,6 +3,14 @@ import { Ingredient } from '../models/ingredient.class';
 import { IngredientConfigService } from '../config/ingredient/ingredient-config.service';
 import { QuantifiedIngredientName } from '../config/product/model';
 
+const supplementNameList: string[] = [
+    'Steak',
+    'Steak végétal',
+    'Oeuf',
+    'Bacon',
+    'Cheddar',
+];
+
 @Injectable({
     providedIn: 'root',
 })
@@ -39,6 +47,16 @@ export class IngredientService {
                 throw new Error('Quantity not found for ingredient');
             }
             return new Ingredient(ingredientConfig, quantity);
+        });
+    }
+
+    getSupplementList(): Ingredient[] {
+        const supplementConfigList =
+            this.ingredientConfigService.getIngredientListByNameList(
+                supplementNameList,
+            );
+        return supplementConfigList.map((ingredientConfig) => {
+            return new Ingredient(ingredientConfig, 0);
         });
     }
 }
