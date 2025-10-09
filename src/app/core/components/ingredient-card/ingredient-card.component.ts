@@ -5,7 +5,7 @@ import {
     input,
     output,
 } from '@angular/core';
-import { Ingredient } from '../../../core/models/ingredient.class';
+import { Ingredient } from '../../models/ingredient.class';
 
 @Component({
     selector: 'app-ingredient-card',

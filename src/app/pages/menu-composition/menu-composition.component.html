@@ -15,16 +15,20 @@
     </div>
     <h2>Burger</h2>
     <h3>Composition</h3>
-    <div class="product-selector-wrapper"></div>
-    <div class="product-selector-wrapper">
-        @for (ingredient of menu().main.ingredientList; track ingredient.name) {
-            <app-ingredient-card
-                [ingredient]="ingredient"
-                (remove)="ingredient.removeQuantity()"
-                (add)="ingredient.addQuantity()"
-            />
-        }
-    </div>
+    @if (menu().main.ingredientList.length > 0) {
+        <div class="product-selector-wrapper">
+            @for (
+                ingredient of menu().main.ingredientList;
+                track ingredient.name
+            ) {
+                <app-ingredient-card
+                    [ingredient]="ingredient"
+                    (remove)="ingredient.removeQuantity()"
+                    (add)="ingredient.addQuantity()"
+                />
+            }
+        </div>
+    }
     <h3>Suppléments</h3>
     <!-- <div class="product-selector-wrapper">
         @for (supplement of supplementList(); track supplement.name) {

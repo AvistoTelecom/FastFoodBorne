@@ -11,7 +11,7 @@ import { Menu } from '../../core/models/menu.class';
 import { MenuService } from '../../core/services/menu.service';
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
 import { ProductSelectorComponent } from '../../core/components/product-selector/product-selector.component';
-import { IngredientCardComponent } from '../main-composition/ingredient-card/ingredient-card.component';
+import { IngredientCardComponent } from '../../core/components/ingredient-card/ingredient-card.component';
 
 @Component({
     selector: 'app-menu-composition',
