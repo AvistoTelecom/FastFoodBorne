@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { ProductList } from './productList';
 import { CategoryConfigService } from '../category/category-config.service';
-import { ProductConfig } from './model';
+import { ProductConfig, ProductType } from './model';
 import { IngredientConfigService } from '../ingredient/ingredient-config.service';
 
 @Injectable({
@@ -33,6 +33,10 @@ export class ProductConfigService {
         );
         if (!product) throw new Error('Product not found by name');
         return product;
+    }
+
+    getProductByType(type: ProductType): ProductConfig[] {
+        return this.productList.filter((product) => product.type === type);
     }
 
     private formatImagePath(url: string) {

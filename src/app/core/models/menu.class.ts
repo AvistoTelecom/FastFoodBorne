@@ -2,14 +2,18 @@ import { MenuConfig } from '../config/menu/model';
 import { Product } from './product.class';
 
 export class Menu {
-    readonly config: MenuConfig;
+    readonly image: string;
+    readonly name: string;
+    readonly price: number;
     readonly main: Product;
     private _size: 'classic' | 'XL';
     private _side: Product | null;
     private _drink: Product | null;
 
-    static sizeSelectionList = ['classic', 'XL'] as const;
-    static xlPrice = 1.99;
+    static sizeSelectionList = [
+        { name: 'classic', price: 0 },
+        { name: 'XL', price: 1.99 },
+    ] as const;
 
     get side(): Product | null {
         return this._side;
@@ -20,21 +24,13 @@ export class Menu {
     }
 
     constructor(config: MenuConfig, main: Product) {
-        this.config = config;
+        this.name = config.name;
+        this.image = config.image;
+        this.price = config.price;
         this.main = main;
         this._size = 'classic';
         this._side = null;
         this._drink = null;
-    }
-
-    get name(): string {
-        return this.config.name;
-    }
-    get price(): number {
-        return this.config.price;
-    }
-    get image(): string {
-        return this.config.image;
     }
     get size(): 'classic' | 'XL' {
         return this._size;
@@ -53,10 +49,11 @@ export class Menu {
     }
 
     get sizePrice(): number {
-        if (this._size === 'XL') {
-            return Menu.xlPrice;
-        }
-        return 0;
+        const sizeOption = Menu.sizeSelectionList.find(
+            (size) => size.name === this._size,
+        );
+        if (!sizeOption) throw new Error('Size option not found');
+        return sizeOption.price;
     }
 
     get totalPrice(): number {

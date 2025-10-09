@@ -6,58 +6,36 @@ import {
     signal,
     Signal,
 } from '@angular/core';
-import { ProductConfigService } from '../../core/config/product/product-config.service';
-import { Product } from '../../core/models/product.class';
-import { Ingredient } from '../../core/models/ingredient.class';
 import { ActivatedRoute } from '@angular/router';
-import { MenuConfigService } from '../../core/config/menu/menu-config.service';
-import { IngredientConfigService } from '../../core/config/ingredient/ingredient-config.service';
 import { Menu } from '../../core/models/menu.class';
+import { MenuService } from '../../core/services/menu.service';
+import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
+import { ProductSelectorComponent } from '../../core/components/product-selector/product-selector.component';
+import { IngredientCardComponent } from '../main-composition/ingredient-card/ingredient-card.component';
 
 @Component({
     selector: 'app-menu-composition',
     standalone: true,
-    imports: [CommonModule],
+    imports: [
+        CommonModule,
+        HeaderImageComponent,
+        ProductSelectorComponent,
+        IngredientCardComponent,
+    ],
     templateUrl: './menu-composition.component.html',
     styleUrl: './menu-composition.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuCompositionComponent {
     route = inject(ActivatedRoute);
-    productService = inject(ProductConfigService);
-    menuService = inject(MenuConfigService);
-    ingredientService = inject(IngredientConfigService);
+    menuService = inject(MenuService);
+    Menu = Menu;
 
-    menu: Signal<Menu>;
+    readonly menu: Signal<Menu>;
 
     menuName = this.route.snapshot.queryParams['menuName'];
 
     constructor() {
-        const menuConfig = this.menuService.getMenuByName(this.menuName);
-
-        const mainProductConfig = this.productService.getProductByName(
-            menuConfig.composition.main,
-        );
-
-        const mainIngredientConfigList =
-            mainProductConfig.ingredientNameList.map((ingredient) => ({
-                ingredientConfig: this.ingredientService.getIngredientByName(
-                    ingredient.name,
-                ),
-                quantity: ingredient.quantity,
-            }));
-        const mainIngredientList: Ingredient[] = mainIngredientConfigList.map(
-            ({ ingredientConfig, quantity }) =>
-                new Ingredient(ingredientConfig, quantity),
-        );
-
-        const mainProduct = new Product(mainProductConfig, mainIngredientList);
-
-        this.menu = signal(new Menu(menuConfig, mainProduct));
-    }
-
-    onClick(ingredient: Ingredient) {
-        ingredient.addQuantity();
-        console.log(this.menu());
+        this.menu = signal(this.menuService.getMenu(this.menuName));
     }
 }

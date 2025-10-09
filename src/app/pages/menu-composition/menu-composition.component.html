@@ -1,8 +1,37 @@
-<div>
-    @for (ingredient of menu().main.ingredientList; track ingredient.name) {
-        <button (click)="onClick(ingredient)">
-            {{ ingredient.name }} ({{ ingredient.quantity }}) Add
-        </button>
-    }
-    {{ menu().totalPrice }}
-</div>
+<app-header-image [withPub]="true" />
+<h1>{{ menu().main.name }}</h1>
+<main>
+    <h2>Taille</h2>
+    <div class="product-selector-wrapper">
+        @for (sizeOption of Menu.sizeSelectionList; track sizeOption.name) {
+            <app-product-selector
+                [image]="'leDoggo.webp'"
+                [price]="sizeOption.price"
+                [title]="sizeOption.name"
+                [selected]="menu().size === sizeOption.name"
+                (isSelected)="menu().changeSize(sizeOption.name)"
+            />
+        }
+    </div>
+    <h2>Burger</h2>
+    <h3>Composition</h3>
+    <div class="product-selector-wrapper"></div>
+    <div class="product-selector-wrapper">
+        @for (ingredient of menu().main.ingredientList; track ingredient.name) {
+            <app-ingredient-card
+                [ingredient]="ingredient"
+                (remove)="ingredient.removeQuantity()"
+                (add)="ingredient.addQuantity()"
+            />
+        }
+    </div>
+    <h3>Suppléments</h3>
+    <!-- <div class="product-selector-wrapper">
+        @for (supplement of supplementList(); track supplement.name) {
+            <app-ingredient-card
+                [ingredient]="supplement"
+                (delete)="deleteIngredient(supplement.name)"
+            />
+        }
+    </div> -->
+</main>

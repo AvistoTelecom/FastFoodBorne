@@ -1,27 +1,19 @@
 import { ProductConfig } from '../config/product/model';
 import { Ingredient } from './ingredient.class';
 
-export type ProductType = 'main' | 'drink' | 'side';
-
 export class Product {
-    readonly config: ProductConfig;
+    readonly name: string;
+    readonly image: string;
+    readonly price: number;
     readonly ingredientList: Ingredient[];
     private _supplementList: Ingredient[];
 
     constructor(config: ProductConfig, ingredientList: Ingredient[]) {
-        this.config = config;
+        this.name = config.name;
+        this.image = config.image;
+        this.price = config.price;
         this.ingredientList = ingredientList;
         this._supplementList = [];
-    }
-
-    get name(): string {
-        return this.config.name;
-    }
-    get image(): string {
-        return this.config.image;
-    }
-    get price(): number {
-        return this.config.price;
     }
 
     get supplementList() {

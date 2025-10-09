@@ -19,7 +19,7 @@ export const ProductList: ProductConfig[] = [
         image: 'Cookie.webp',
         name: 'Cookie',
         price: 2,
-        type: 'side',
+        type: 'dessert',
         ingredientNameList: [],
     },
     {
@@ -71,7 +71,7 @@ export const ProductList: ProductConfig[] = [
         image: 'Glace.webp',
         name: 'Glace',
         price: 3,
-        type: 'side',
+        type: 'dessert',
         ingredientNameList: [],
     },
     {
@@ -126,7 +126,7 @@ export const ProductList: ProductConfig[] = [
         image: 'Muffin.webp',
         name: 'Muffin',
         price: 3,
-        type: 'side',
+        type: 'dessert',
         ingredientNameList: [],
     },
     {
@@ -161,7 +161,7 @@ export const ProductList: ProductConfig[] = [
         image: 'Salade-Fruits.webp',
         name: 'Salade de fruits',
         price: 3,
-        type: 'side',
+        type: 'dessert',
         ingredientNameList: [],
     },
     {

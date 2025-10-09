@@ -5,6 +5,7 @@ import {
     input,
     output,
 } from '@angular/core';
+import { Ingredient } from '../../../core/models/ingredient.class';
 
 @Component({
     selector: 'app-ingredient-card',
@@ -15,17 +16,19 @@ import {
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IngredientCardComponent {
-    ingredient = input.required<{
-        name: string;
-        quantity: number;
-    }>();
+    ingredient = input.required<Ingredient>();
 
     image = computed(
         () => `./assets/ingredient/${this.ingredient().name}.webp`,
     );
-    delete = output<void>();
+    remove = output<void>();
+    add = output<void>();
 
-    deleteIngredient() {
-        this.delete.emit();
+    removeIngredient() {
+        this.remove.emit();
+    }
+
+    addIngredient() {
+        this.add.emit();
     }
 }

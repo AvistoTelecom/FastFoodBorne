@@ -14,21 +14,18 @@ export class IngredientConfigService {
             image: this.formatImagePath(ingredient.image),
         }));
     }
-
-    getIngredientPriceByName(name: string): number {
-        const ingredient = this.ingredientList.find(
-            (ingredient) => ingredient.name === name,
-        );
-        if (!ingredient) throw new Error('Ingredient not found by name');
-        return ingredient.price;
-    }
-
     getIngredientByName(name: string): IngredientConfig {
         const ingredient = this.ingredientList.find(
             (ingredient) => ingredient.name === name,
         );
         if (!ingredient) throw new Error('Ingredient not found by name');
         return ingredient;
+    }
+
+    getIngredientListByNameList(nameList: string[]): IngredientConfig[] {
+        return this._ingredientList.filter((ingredient) =>
+            nameList.includes(ingredient.name),
+        );
     }
 
     private formatImagePath(url: string) {

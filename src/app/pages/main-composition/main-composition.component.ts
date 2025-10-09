@@ -11,6 +11,10 @@ import { HeaderImageComponent } from '../../core/components/header-image/header-
 import { ProductSelectorComponent } from '../../core/components/product-selector/product-selector.component';
 import { IngredientCardComponent } from './ingredient-card/ingredient-card.component';
 import { ProductConfigService } from '../../core/config/product/product-config.service';
+import { supplementNameList } from '../../core/config/supplement/supplementNameList';
+import { Ingredient } from '../../core/models/ingredient.class';
+import { IngredientConfigService } from '../../core/config/ingredient/ingredient-config.service';
+import { Menu } from '../../core/models/menu.class';
 
 @Component({
     selector: 'app-main-composition',
@@ -28,17 +32,24 @@ import { ProductConfigService } from '../../core/config/product/product-config.s
 export class MainCompositionComponent {
     route = inject(ActivatedRoute);
     productConfigService = inject(ProductConfigService);
+    ingredientConfigService = inject(IngredientConfigService);
+    Menu = Menu;
 
     productName = this.route.snapshot.queryParams['productName'];
 
-    product = computed(() =>
+    readonly product = computed(() =>
         this.productConfigService.getProductByName(this.productName),
     );
 
-    availableSizeOption = [
-        { name: 'classic', price: undefined },
-        { name: 'XL', price: 1.99 },
-    ];
+    readonly supplementList = signal<Ingredient[]>(
+        supplementNameList.map((ingredientName) => {
+            const ingredientConfig =
+                this.ingredientConfigService.getIngredientByName(
+                    ingredientName,
+                );
+            return new Ingredient(ingredientConfig, 0);
+        }),
+    );
 
     selectedSize = signal<string>('classic');
     ingredientList = computed(() => this.product().ingredientNameList);
