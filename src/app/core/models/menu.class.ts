@@ -62,4 +62,8 @@ export class Menu {
             return total + product.supplementPrice;
         }, this.price + this.sizePrice);
     }
+
+    get isValid(): boolean {
+        return this.side !== null && this.drink !== null;
+    }
 }

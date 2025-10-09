@@ -21,23 +21,10 @@ export class Product {
     }
 
     get totalPrice(): number {
-        return (
-            this.price + this.totalIngredientPrice + this.totalSupplementPrice
-        );
+        return this.price + this.supplementPrice;
     }
 
     get supplementPrice(): number {
-        return this.totalSupplementPrice + this.totalIngredientPrice;
-    }
-
-    private get totalIngredientPrice(): number {
-        return this.ingredientList.reduce(
-            (total, ingredient) => total + ingredient.totalPrice,
-            0,
-        );
-    }
-
-    private get totalSupplementPrice(): number {
         return this.supplementList.reduce(
             (total, ingredient) => total + ingredient.totalPrice,
             0,

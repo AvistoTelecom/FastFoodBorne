@@ -15,6 +15,7 @@ import { ProductConfigService } from '../../core/config/product/product-config.s
 import { MenuConfigService } from '../../core/config/menu/menu-config.service';
 import { MenuConfig } from '../../core/config/menu/model';
 import { ProductConfig } from '../../core/config/product/model';
+import { OrderService } from '../../core/services/order.service';
 
 @Component({
     selector: 'app-home',
@@ -36,6 +37,7 @@ export class HomeComponent {
     categoryService = inject(CategoryConfigService);
     productService = inject(ProductConfigService);
     menuConfigService = inject(MenuConfigService);
+    orderService = inject(OrderService);
 
     categoryList = this.categoryService.categoryList;
 

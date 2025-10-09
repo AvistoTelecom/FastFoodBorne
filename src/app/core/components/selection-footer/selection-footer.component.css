@@ -1,0 +1,28 @@
+.btn-container {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    border: none;
+    width: 100%;
+    height: 140px;
+    font-family: Interstate, sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+}
+
+.button-cancel {
+    background-color: var(--color-danger);
+}
+
+
+.button-confirm {
+    background-color: var(--color-valid);
+}
+
+.button-confirm:disabled {
+    background-color: var(--color-secondary);
+    cursor: auto;
+} 

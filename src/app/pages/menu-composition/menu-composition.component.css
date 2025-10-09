@@ -34,3 +34,9 @@ h3 {
 main {
   padding: 10px 40px;
 }
+
+.supplement-section{
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}

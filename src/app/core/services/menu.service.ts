@@ -14,6 +14,7 @@ export class MenuService {
         const menuConfig = this.menuConfigService.getMenuByName(name);
         const mainProduct = this.productService.getProduct(
             menuConfig.composition.main,
+            true,
         );
         return new Menu(menuConfig, mainProduct);
     }

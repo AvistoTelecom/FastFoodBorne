@@ -5,7 +5,7 @@
     <div class="product-selector-wrapper">
         @for (sizeOption of Menu.sizeSelectionList; track sizeOption.name) {
             <app-product-selector
-                [image]="'leDoggo.webp'"
+                [image]="'assets/product/LeDoggo.webp'"
                 [price]="sizeOption.price"
                 [title]="sizeOption.name"
                 [selected]="menu().size === sizeOption.name"
@@ -29,7 +29,12 @@
             }
         </div>
     }
-    <h3>Suppléments</h3>
+    <div class="supplement-section">
+        <h3>Suppléments</h3>
+        @if (menu().main.supplementPrice > 0) {
+            <h3>+{{ menu().main.supplementPrice }}€</h3>
+        }
+    </div>
     <div class="product-selector-wrapper">
         @for (supplement of menu().main.supplementList; track supplement.name) {
             <app-supplement-card
@@ -38,4 +43,30 @@
             />
         }
     </div>
+    <h2>Accompagnement</h2>
+    <div class="product-selector-wrapper">
+        @for (side of sideProductList; track side.name) {
+            <app-product-selector
+                [image]="side.image"
+                [title]="side.name"
+                [selected]="menu().side?.name === side.name"
+                (isSelected)="menu().changeSide(side)"
+            />
+        }
+    </div>
+    <h2>Boisson</h2>
+    <div class="product-selector-wrapper">
+        @for (drink of drinkProductList; track drink.name) {
+            <app-product-selector
+                [image]="drink.image"
+                [title]="drink.name"
+                [selected]="menu().drink?.name === drink.name"
+                (isSelected)="menu().changeDrink(drink)"
+            />
+        }
+    </div>
 </main>
+<app-selection-footer
+    [isConfirmDisabled]="!menu().isValid"
+    (confirmed)="onConfirm()"
+/>

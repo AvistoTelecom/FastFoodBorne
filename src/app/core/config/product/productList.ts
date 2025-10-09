@@ -61,7 +61,7 @@ export const ProductList: ProductConfig[] = [
         image: 'Frites.webp',
         name: 'Frites XL',
         price: 6,
-        type: 'side',
+        type: 'main',
         ingredientNameList: [
             { name: 'Frites au Bacon', quantity: 0 },
             { name: 'Frites au Cheddar', quantity: 0 },

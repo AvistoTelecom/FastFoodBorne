@@ -25,21 +25,21 @@ export class OrderService {
         return this._menuList.asReadonly();
     }
 
-    totalMenuPrice = computed(() => {
+    totalMenuPrice = computed<number>(() => {
         return this._menuList().reduce(
             (total, menu) => total + menu.totalPrice,
             0,
         );
     });
 
-    totalProductPrice = computed(() => {
+    totalProductPrice = computed<number>(() => {
         return this._productList().reduce(
             (total, product) => total + product.totalPrice,
             0,
         );
     });
 
-    totalOrderPrice = computed(() => {
-        return this.totalProductPrice() + this.totalMenuPrice();
+    totalOrderPrice = computed<number>(() => {
+        return +(this.totalProductPrice() + this.totalMenuPrice()).toFixed(2);
     });
 }
