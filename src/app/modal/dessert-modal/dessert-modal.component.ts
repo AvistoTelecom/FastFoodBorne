@@ -5,7 +5,7 @@ import {
     inject,
     signal,
 } from '@angular/core';
-import { ModalProductComponent } from '../../core/components/modal-product/modal-product.component';
+import { ModalProductComponent } from './modal-product/modal-product.component';
 import { ProductService } from '../../core/services/product.service';
 import { DialogRef } from '@angular/cdk/dialog';
 import { Product } from '../../core/models/product.class';
