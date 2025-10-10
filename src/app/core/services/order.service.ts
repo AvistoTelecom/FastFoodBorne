@@ -13,6 +13,10 @@ export class OrderService {
         this._productList.set([...this._productList(), product]);
     }
 
+    addProductList(productList: Product[]) {
+        this._productList.set([...this._productList(), ...productList]);
+    }
+
     get productList() {
         return this._productList.asReadonly();
     }
@@ -42,4 +46,9 @@ export class OrderService {
     totalOrderPrice = computed<number>(() => {
         return +(this.totalProductPrice() + this.totalMenuPrice()).toFixed(2);
     });
+
+    flushOrder(): void {
+        this._productList.set([]);
+        this._menuList.set([]);
+    }
 }

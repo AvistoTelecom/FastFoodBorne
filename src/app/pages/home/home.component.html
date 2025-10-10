@@ -29,9 +29,7 @@
     </div>
 </main>
 <div class="btn-container">
-    <button class="btn-giveup" [routerLink]="['/splash-screen']">
-        Abandon
-    </button>
+    <button class="btn-giveup" (click)="onAbandon()">Abandon</button>
     <button
         class="btn-order"
         [disabled]="orderService.totalOrderPrice() === 0"

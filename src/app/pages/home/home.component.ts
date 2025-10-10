@@ -70,4 +70,9 @@ export class HomeComponent {
         });
         return;
     }
+
+    onAbandon(): void {
+        this.orderService.flushOrder();
+        this.router.navigate(['/splash-screen']);
+    }
 }

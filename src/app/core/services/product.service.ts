@@ -35,6 +35,12 @@ export class ProductService {
         return this.formatProductConfigList(drinkProductConfigList, false);
     }
 
+    getDessertList(): Product[] {
+        const dessertProductConfigList =
+            this.productConfigService.getProductByType('dessert');
+        return this.formatProductConfigList(dessertProductConfigList, false);
+    }
+
     private formatProductConfigList(
         productConfigList: ProductConfig[],
         isSupplementAvailable: boolean,

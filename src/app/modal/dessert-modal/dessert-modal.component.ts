@@ -1,7 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { MenuService } from '../../core/services/menu.service';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    inject,
+    signal,
+} from '@angular/core';
 import { ModalProductComponent } from '../../core/components/modal-product/modal-product.component';
+import { ProductService } from '../../core/services/product.service';
+import { DialogRef } from '@angular/cdk/dialog';
+import { Product } from '../../core/models/product.class';
+import { OrderService } from '../../core/services/order.service';
 
 @Component({
     selector: 'app-dessert-modal',
@@ -12,20 +20,43 @@ import { ModalProductComponent } from '../../core/components/modal-product/modal
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DessertModalComponent {
-    readonly menuService = new MenuService();
+    productService = inject(ProductService);
+    dialogRef = inject(DialogRef<string>);
+    orderService = inject(OrderService);
 
-    selected = signal(false);
-    dessertList = this.menuService.getDessertList();
+    selectedDessertList = signal<Product[]>([]);
+    dessertList = this.productService.getDessertList();
 
-    onSelection(isSelected: boolean) {
-        this.selected.set(isSelected);
+    onSelection(selectedDessert: Product) {
+        const dessert = this.selectedDessertList().find(
+            (product) => product.name === selectedDessert.name,
+        );
+        if (dessert) {
+            this.selectedDessertList.set(
+                this.selectedDessertList().filter(
+                    (product) => product.name !== selectedDessert.name,
+                ),
+            );
+            return;
+        }
+        this.selectedDessertList.set([
+            ...this.selectedDessertList(),
+            selectedDessert,
+        ]);
     }
 
-    onCancel() {
-        return;
+    onCancel(): void {
+        this.dialogRef.close();
     }
 
-    onValidate() {
-        return;
+    onValidate(): void {
+        this.orderService.addProductList(this.selectedDessertList());
+        this.dialogRef.close('confirmed');
+    }
+
+    isSelected(dessert: Product): boolean {
+        return this.selectedDessertList().some(
+            (product) => product.name === dessert.name,
+        );
     }
 }
