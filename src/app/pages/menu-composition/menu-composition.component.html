@@ -1,0 +1,72 @@
+<app-header-image [withPub]="true" />
+<h1>{{ menu().main.name }}</h1>
+<main>
+    <h2>Taille</h2>
+    <div class="product-selector-wrapper">
+        @for (sizeOption of Menu.sizeSelectionList; track sizeOption.name) {
+            <app-product-selector
+                [image]="sizeOption.image"
+                [price]="sizeOption.price"
+                [title]="sizeOption.name"
+                [selected]="menu().size === sizeOption.name"
+                (isSelected)="menu().changeSize(sizeOption.name)"
+            />
+        }
+    </div>
+    <h2>Burger</h2>
+    <h3>Composition</h3>
+    @if (menu().main.ingredientList.length > 0) {
+        <div class="product-selector-wrapper">
+            @for (
+                ingredient of menu().main.ingredientList;
+                track ingredient.name
+            ) {
+                <app-ingredient-card
+                    [ingredient]="ingredient"
+                    (remove)="ingredient.removeQuantity()"
+                    (add)="ingredient.addQuantity()"
+                />
+            }
+        </div>
+    }
+    <div class="supplement-section">
+        <h3>Suppléments</h3>
+        @if (menu().main.supplementPrice > 0) {
+            <h3>+{{ menu().main.supplementPrice }}€</h3>
+        }
+    </div>
+    <div class="product-selector-wrapper">
+        @for (supplement of menu().main.supplementList; track supplement.name) {
+            <app-supplement-card
+                [ingredient]="supplement"
+                (delete)="supplement.removeQuantity()"
+            />
+        }
+    </div>
+    <h2>Accompagnement</h2>
+    <div class="product-selector-wrapper">
+        @for (side of sideProductList; track side.name) {
+            <app-product-selector
+                [image]="side.image"
+                [title]="side.name"
+                [selected]="menu().side?.name === side.name"
+                (isSelected)="menu().changeSide(side)"
+            />
+        }
+    </div>
+    <h2>Boisson</h2>
+    <div class="product-selector-wrapper">
+        @for (drink of drinkProductList; track drink.name) {
+            <app-product-selector
+                [image]="drink.image"
+                [title]="drink.name"
+                [selected]="menu().drink?.name === drink.name"
+                (isSelected)="menu().changeDrink(drink)"
+            />
+        }
+    </div>
+</main>
+<app-selection-footer
+    [isConfirmDisabled]="!menu().isValid"
+    (confirmed)="onConfirm()"
+/>

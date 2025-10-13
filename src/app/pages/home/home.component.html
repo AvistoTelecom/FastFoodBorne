@@ -29,8 +29,16 @@
     </div>
 </main>
 <div class="btn-container">
-    <button class="btn-giveup" [routerLink]="['/splash-screen']">
-        Abandon
+    <button class="btn-giveup" (click)="onAbandon()">Abandon</button>
+    <button
+        class="btn-order"
+        [disabled]="orderService.totalOrderPrice() === 0"
+        [routerLink]="['/order-summary']"
+    >
+        Ma commande
+        <br />
+        @if (orderService.totalOrderPrice() > 0) {
+            +{{ orderService.totalOrderPrice() }}€
+        }
     </button>
-    <button class="btn-order" [routerLink]="['/home']">Ma commande</button>
 </div>

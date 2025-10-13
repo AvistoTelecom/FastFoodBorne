@@ -3,9 +3,9 @@ import {
     Component,
     ChangeDetectionStrategy,
     input,
-    model,
+    output,
 } from '@angular/core';
-import { Product } from '../../models/product.type';
+import { Product } from '../../../core/models/product.class';
 
 @Component({
     selector: 'app-modal-product',
@@ -17,5 +17,10 @@ import { Product } from '../../models/product.type';
 })
 export class ModalProductComponent {
     product = input.required<Product>();
-    selected = model<boolean>(false);
+    isSelected = input.required<boolean>();
+    selected = output<void>();
+
+    onSelection(): void {
+        this.selected.emit();
+    }
 }

@@ -9,13 +9,13 @@ import {
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
 import { HomeItemCardComponent } from './home-item-card/home-item-card.component';
 import { ProductCarouselComponent } from './product-carousel/product-carousel.component';
-import { MenuService } from '../../core/services/menu.service';
 import { Router, RouterModule } from '@angular/router';
 import { CategoryConfigService } from '../../core/config/category/category-config.service';
 import { ProductConfigService } from '../../core/config/product/product-config.service';
 import { MenuConfigService } from '../../core/config/menu/menu-config.service';
 import { MenuConfig } from '../../core/config/menu/model';
 import { ProductConfig } from '../../core/config/product/model';
+import { OrderService } from '../../core/services/order.service';
 
 @Component({
     selector: 'app-home',
@@ -32,11 +32,12 @@ import { ProductConfig } from '../../core/config/product/model';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-    readonly menuService = inject(MenuService);
+    // readonly menuService = inject(MenuService);
     readonly router = inject(Router);
     categoryService = inject(CategoryConfigService);
     productService = inject(ProductConfigService);
     menuConfigService = inject(MenuConfigService);
+    orderService = inject(OrderService);
 
     categoryList = this.categoryService.categoryList;
 
@@ -58,7 +59,6 @@ export class HomeComponent {
     );
 
     onMenuSelected(menu: MenuConfig): void {
-        console.log(menu);
         this.router.navigate(['/menu-composition'], {
             queryParams: { menuName: menu.name },
         });
@@ -69,5 +69,10 @@ export class HomeComponent {
             queryParams: { productName: product.name },
         });
         return;
+    }
+
+    onAbandon(): void {
+        this.orderService.flushOrder();
+        this.router.navigate(['/splash-screen']);
     }
 }

@@ -4,7 +4,7 @@
     <h2>Burger</h2>
     <h3>Taille</h3>
     <div class="product-selector-wrapper">
-        @for (sizeOption of availableSizeOption; track sizeOption.name) {
+        @for (sizeOption of Menu.sizeSelectionList; track sizeOption.name) {
             <app-product-selector
                 [image]="'./assets/menu/' + product().image"
                 [price]="sizeOption.price"
@@ -18,11 +18,19 @@
     <div class="product-selector-wrapper"></div>
     <div class="product-selector-wrapper">
         @for (ingredient of ingredientList(); track ingredient.name) {
-            <app-ingredient-card
+            <!-- <app-ingredient-card
                 [ingredient]="ingredient"
                 (delete)="deleteIngredient(ingredient.name)"
-            />
+            /> -->
         }
     </div>
     <h3>Suppléments</h3>
+    <!-- <div class="product-selector-wrapper">
+        @for (supplement of supplementList(); track supplement.name) {
+            <app-ingredient-card
+                [ingredient]="supplement"
+                (delete)="deleteIngredient(supplement.name)"
+            />
+        }
+    </div> -->
 </main>

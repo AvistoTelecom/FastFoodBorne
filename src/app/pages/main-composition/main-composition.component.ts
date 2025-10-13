@@ -9,8 +9,9 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
 import { ProductSelectorComponent } from '../../core/components/product-selector/product-selector.component';
-import { IngredientCardComponent } from './ingredient-card/ingredient-card.component';
+import { IngredientConfigService } from '../../core/config/ingredient/ingredient-config.service';
 import { ProductConfigService } from '../../core/config/product/product-config.service';
+import { Menu } from '../../core/models/menu.class';
 
 @Component({
     selector: 'app-main-composition',
@@ -19,7 +20,7 @@ import { ProductConfigService } from '../../core/config/product/product-config.s
         CommonModule,
         HeaderImageComponent,
         ProductSelectorComponent,
-        IngredientCardComponent,
+        // IngredientCardComponent,
     ],
     templateUrl: './main-composition.component.html',
     styleUrl: './main-composition.component.css',
@@ -28,17 +29,14 @@ import { ProductConfigService } from '../../core/config/product/product-config.s
 export class MainCompositionComponent {
     route = inject(ActivatedRoute);
     productConfigService = inject(ProductConfigService);
+    ingredientConfigService = inject(IngredientConfigService);
+    Menu = Menu;
 
     productName = this.route.snapshot.queryParams['productName'];
 
-    product = computed(() =>
+    readonly product = computed(() =>
         this.productConfigService.getProductByName(this.productName),
     );
-
-    availableSizeOption = [
-        { name: 'classic', price: undefined },
-        { name: 'XL', price: 1.99 },
-    ];
 
     selectedSize = signal<string>('classic');
     ingredientList = computed(() => this.product().ingredientNameList);

@@ -59,5 +59,12 @@ button {
 
 
 .btn-order {
+    background-color: var(--color-valid);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-order:disabled{
     background-color: var(--color-secondary);
 }

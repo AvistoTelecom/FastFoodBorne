@@ -1,6 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { CategoryConfigService } from '../category/category-config.service';
 import { MenuList } from './menuList';
+import { MenuConfig } from './model';
 
 @Injectable({
     providedIn: 'root',
@@ -9,8 +10,7 @@ export class MenuConfigService {
     categoryService = inject(CategoryConfigService);
     private readonly menuList = MenuList;
 
-    getAllMenuFromCategory(categoryName: string) {
-        console.log(this.menuList);
+    getAllMenuFromCategory(categoryName: string): MenuConfig[] {
         return this.menuList
             .filter((menu) =>
                 this.categoryService
@@ -23,7 +23,13 @@ export class MenuConfigService {
             }));
     }
 
-    private formatImagePath(url: string) {
+    getMenuByName(name: string): MenuConfig {
+        const menu = this.menuList.find((menu) => menu.name === name);
+        if (!menu) throw new Error('Menu not found by name');
+        return menu;
+    }
+
+    private formatImagePath(url: string): string {
         return `assets/menu/${url}`;
     }
 }

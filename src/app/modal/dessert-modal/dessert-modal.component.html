@@ -1,11 +1,11 @@
 <div class="modal">
     <h2 class="title">Un petit dessert ?</h2>
     <div class="dessert-wrapper">
-        @for (dessert of dessertList; track dessert.meta.name) {
+        @for (dessert of dessertList; track dessert.name) {
             <app-modal-product
                 [product]="dessert"
-                [selected]="selected()"
-                (selectedChange)="onSelection($event)"
+                [isSelected]="isSelected(dessert)"
+                (selected)="onSelection(dessert)"
             />
         }
     </div>

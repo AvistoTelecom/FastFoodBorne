@@ -1,0 +1,13 @@
+<div>
+    <img [src]="ingredient().image" [alt]="ingredient().name" />
+    <h2>{{ ingredient().name }}</h2>
+    @if (ingredient().quantity > 0) {
+        <button class="remove-button" (click)="ingredient().removeQuantity()">
+            Supprimer
+        </button>
+    } @else {
+        <button class="add-button" (click)="ingredient().addQuantity()">
+            Ajouter
+        </button>
+    }
+</div>
