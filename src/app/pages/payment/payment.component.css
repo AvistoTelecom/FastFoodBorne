@@ -4,14 +4,12 @@
 }
 
 p {
-    font-family: Overpass, sans-serif;
     font-weight: 400;
     font-size: 40px;
     margin: 0;
 }
 
 h1 {
-    font-family: Overpass, sans-serif;
     font-weight: 800;
     font-size: 64px;
     text-align: center;
@@ -60,7 +58,6 @@ h1 {
 
 .text-indisponible {
     color: var(--color-danger);
-    font-family: Overpass, sans-serif;
     font-weight: 700;
     font-size: 32px;
     text-align: center;

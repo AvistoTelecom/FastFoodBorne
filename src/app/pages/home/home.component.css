@@ -11,12 +11,12 @@ main {
 .column-product {
     overflow: scroll;
     max-height: 1060px; 
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .column-product::-webkit-scrollbar {
-    display: none; /* Older Safari and Chromium */
+    display: none;
 }
 
 .product-container {
@@ -28,7 +28,6 @@ main {
 }
 
 h2 {
-    font-family: Interstate, sans-serif;
     font-weight: 700;
     font-size: 32px;
 }
@@ -47,7 +46,6 @@ button {
     border: none;
     width: 100%;
     height: 140px;
-    font-family: Interstate, sans-serif;
     font-weight: 400;
     font-size: 40px;
     color: white;

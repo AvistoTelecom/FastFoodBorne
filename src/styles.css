@@ -12,6 +12,9 @@
     --color-valid: #009363;
 }
 
+html {
+      font-family: Overpass, sans-serif;
+}
 
 body {
     margin:0;
