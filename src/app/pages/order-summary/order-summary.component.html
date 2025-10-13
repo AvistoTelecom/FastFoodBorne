@@ -11,11 +11,15 @@
                     <h4>{{ menu.side?.name }}</h4>
                     <h4>{{ menu.drink?.name }}</h4>
                     @if (menu.main.hasSupplement) {
-                        <h4 class="supplement">Suppléments</h4>
+                        <h4 class="supplement">
+                            Suppléments ({{ menu.main.numberOfSupplements }})
+                        </h4>
                     }
                     @if (menu.main.hasDeletedIngredient) {
                         <h4 class="deleted-ingredient">
-                            Ingrédients supprimés
+                            Ingrédients supprimés ({{
+                                menu.main.numberOfDeletedIngredients
+                            }})
                         </h4>
                     }
                 </div>
