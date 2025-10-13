@@ -1,8 +1,8 @@
 <app-header-image [withPub]="true" />
-<h1>{{ menu().main.name }}</h1>
+<h1 class="text-center">{{ menu().main.name }}</h1>
 <main>
     <h2>Taille</h2>
-    <div class="product-selector-wrapper">
+    <div class="product-selector-wrapper mt-1">
         @for (sizeOption of Menu.sizeSelectionList; track sizeOption.name) {
             <app-product-selector
                 [image]="sizeOption.image"
@@ -55,7 +55,7 @@
         }
     </div>
     <h2>Boisson</h2>
-    <div class="product-selector-wrapper">
+    <div class="product-selector-wrapper mb">
         @for (drink of drinkProductList; track drink.name) {
             <app-product-selector
                 [image]="drink.image"

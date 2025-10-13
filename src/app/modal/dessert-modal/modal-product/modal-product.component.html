@@ -1,7 +1,7 @@
 <button [class.selected-product]="isSelected()" (click)="onSelection()">
     <img [src]="product().image" [alt]="product().name" />
-    <h2>{{ product().name }}</h2>
-    <p>
+    <h4 class="text-center">{{ product().name }}</h4>
+    <p class="text-center">
         <b>+{{ product().price }}€</b>
     </p>
 </button>

@@ -25,19 +25,6 @@ button:hover{
   background-color: var(--color-primary-light);
 }
 
-h2 {
-    text-align: center;
-    font-weight: 700;
-    font-size: 23px;
-    margin: 0;
-}
-
-p {
-    text-align: center;
-    font-size: 23px;
-    margin: 0;
-}
-
 .selected-product{
   background-color: var(--color-primary)!important;
 }

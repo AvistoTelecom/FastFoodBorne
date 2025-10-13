@@ -8,6 +8,10 @@ main {
 
 }
 
+h3 {
+    margin-top: 40px;
+}
+
 .column-product {
     overflow: scroll;
     max-height: 1060px; 
@@ -22,19 +26,8 @@ main {
 .product-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    row-gap: 30px;
-    place-items: center;
+    justify-content: space-evenly;
     padding-bottom: 40px;
-}
-
-h2 {
-    font-weight: 700;
-    font-size: 32px;
-}
-
-hr {
-    margin-top: 40px;
-    margin-bottom: 8px;
 }
 
 .btn-container {

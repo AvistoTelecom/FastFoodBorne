@@ -6,7 +6,7 @@
     />
     <div class="column-product">
         @if (menuList().length > 0) {
-            <h2>Menus</h2>
+            <h3>Menus</h3>
             <div class="product-container">
                 @for (menu of menuList(); track menu.name) {
                     <app-home-item-card
@@ -17,7 +17,7 @@
             </div>
             <hr />
         }
-        <h2>A l'unité</h2>
+        <h3>A l'unité</h3>
         <div class="product-container">
             @for (product of productList(); track product.name) {
                 <app-home-item-card

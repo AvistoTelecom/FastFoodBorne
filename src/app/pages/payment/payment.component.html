@@ -6,15 +6,18 @@
 <div class="btn-column">
     <div class="container-unavailable">
         <button class="btn-unavailable">
-            <p>A la borne</p>
-            <img class="borne" src="assets/global/borne.webp" />
+            <h2>A la borne</h2>
+            <img class="borne" src="assets/global/borne.webp" alt="borne" />
         </button>
-        <p class="text-indisponible">Indisponible</p>
+        <h3 class="text-indisponible text-center">Indisponible</h3>
     </div>
     <button class="btn-available" [routerLink]="['/bills']">
-        <p>Au comptoir</p>
-        <img class="comptoir" src="assets/global/comptoir.webp" />
+        <h2>Au comptoir</h2>
+        <img
+            class="comptoir"
+            src="assets/global/comptoir.webp"
+            alt="comptoir"
+        />
     </button>
+    <button class="btn">Retour</button>
 </div>
-
-<button class="btn">Retour</button>

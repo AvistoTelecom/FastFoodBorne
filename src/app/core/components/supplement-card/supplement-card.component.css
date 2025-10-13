@@ -16,19 +16,6 @@ img {
   background-color: white;
 }
 
-h2 {
-    text-align: center;
-    font-weight: 700;
-    font-size: 23px;
-    margin: 0;
-}
-
-p {
-    text-align: center;
-    font-size: 23px;
-    margin: 0;
-}
-
 .remove-button, .add-button {
     width: 30px;
     height: 30px;
