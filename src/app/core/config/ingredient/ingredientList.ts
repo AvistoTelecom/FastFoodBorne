@@ -57,7 +57,7 @@ export const IngredientList: IngredientConfig[] = [
         price: 1,
     },
     {
-        image: 'Salad.webp',
+        image: 'Salade-verte.webp',
         name: 'Salade',
         price: 1,
     },
