@@ -19,7 +19,7 @@ export const routes: Routes = [
             import('./pages/home/home.component').then((m) => m.HomeComponent),
     },
     {
-        path: 'bills',
+        path: 'bill',
         loadComponent: () =>
             import('./pages/bills/bills.component').then(
                 (m) => m.BillsComponent,
