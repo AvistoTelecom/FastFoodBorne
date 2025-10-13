@@ -7,7 +7,7 @@ main {
     display: flex;
     flex-direction: column;
     height: calc(100% - 405px);
-    gap: 20px;
+    gap: calc(var(--spacer) *2);
     justify-content: space-evenly;
     align-items: center;
 }

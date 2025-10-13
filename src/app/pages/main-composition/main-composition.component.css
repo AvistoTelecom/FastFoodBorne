@@ -5,10 +5,10 @@
 .product-selector-wrapper{
   display: flex;
   justify-content: start;
-  gap: 32px;
+  gap: calc(var(--spacer) * 3);
   flex-wrap: wrap;
 }
 
 main {
-  padding: 10px 40px;
+  padding: var(--spacer) calc(var(--spacer) * 4);
 }

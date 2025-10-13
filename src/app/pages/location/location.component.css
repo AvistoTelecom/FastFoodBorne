@@ -4,11 +4,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 80px;
+    gap: calc(var(--spacer) * 8);
 }
 
 .margin {
-    margin: 150px 60px;
+    margin: calc(var(--spacer) * 15) calc(var(--spacer) * 6);
 }
 
 button {
@@ -20,7 +20,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20px;
+    padding-bottom: calc(var(--spacer) * 2);
     border: 1px solid #965923;
 }
 

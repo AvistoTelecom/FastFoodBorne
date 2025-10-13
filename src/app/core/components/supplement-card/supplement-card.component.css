@@ -3,20 +3,20 @@ img {
     height: 120px;
 }
 
-.supplement-card{
-  width: 245px;
-  height: 245px;
-  border: 0.5px solid var(--color-secondary);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap:12px;
-  border-radius: 24px;
-  background-color: white;
+.supplement-card {
+    width: 245px;
+    height: 245px;
+    border: 0.5px solid var(--color-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacer);
+    border-radius: 24px;
+    background-color: white;
 }
 
-.remove-button, .add-button {
+button {
     width: 30px;
     height: 30px;
     font-size: 25px;
@@ -36,7 +36,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: var(--spacer);
 }
 
 button:disabled {

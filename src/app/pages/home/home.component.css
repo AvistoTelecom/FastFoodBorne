@@ -9,7 +9,7 @@ main {
 }
 
 h3 {
-    margin-top: 40px;
+    margin-top: calc(var(--spacer) * 4);
 }
 
 .column-product {
@@ -27,7 +27,7 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: space-evenly;
-    padding-bottom: 40px;
+    padding-bottom: calc(var(--spacer) * 4);
 }
 
 .btn-container {
