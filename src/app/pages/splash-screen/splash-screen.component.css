@@ -4,6 +4,9 @@
 }
 
 .logo-container {
+    position: absolute;
+    top: 15px;
+    left: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,6 +41,13 @@
     line-height: 1;
     margin: 0;
     height: fit-content;
+}
+
+.sub-title{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+
 }
 
 .splash {
