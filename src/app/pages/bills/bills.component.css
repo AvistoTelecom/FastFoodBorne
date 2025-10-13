@@ -6,7 +6,7 @@
 main {
     display: flex;
     flex-direction: column;
-    height: calc(100% - 405px);
+    height: calc(100% - var(--top-bar-height));
     gap: calc(var(--spacer) *2);
     justify-content: space-evenly;
     align-items: center;

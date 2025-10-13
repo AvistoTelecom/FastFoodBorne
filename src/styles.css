@@ -11,6 +11,7 @@
     --color-secondary: #CDCDCD;
     --color-valid: #009363;
     --spacer: 10px;
+    --top-bar-height: 405px;
 }
 
 html {
