@@ -5,7 +5,7 @@
     <div class="product-selector-wrapper">
         @for (sizeOption of Menu.sizeSelectionList; track sizeOption.name) {
             <app-product-selector
-                [image]="'assets/product/LeDoggo.webp'"
+                [image]="sizeOption.image"
                 [price]="sizeOption.price"
                 [title]="sizeOption.name"
                 [selected]="menu().size === sizeOption.name"

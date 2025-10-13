@@ -11,8 +11,12 @@ export class Menu {
     private _drink: Product | null;
 
     static sizeSelectionList = [
-        { name: 'classic', price: 0 },
-        { name: 'XL', price: 1.99 },
+        {
+            name: 'classic',
+            price: 0,
+            image: '/assets/global/Pourquoi ma gamelle est vide _.png',
+        },
+        { name: 'XL', price: 1.99, image: '/assets/global/xl-size.png' },
     ] as const;
 
     get side(): Product | null {
