@@ -14,7 +14,7 @@ export class Menu {
         {
             name: 'classic',
             price: 0,
-            image: '/assets/global/Pourquoi ma gamelle est vide _.png',
+            image: '/assets/global/classic-size.png',
         },
         { name: 'XL', price: 1.99, image: '/assets/global/xl-size.png' },
     ] as const;

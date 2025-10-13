@@ -12,10 +12,12 @@ export class MenuService {
 
     getMenu(name: string) {
         const menuConfig = this.menuConfigService.getMenuByName(name);
+        console.log(menuConfig);
         const mainProduct = this.productService.getProduct(
             menuConfig.composition.main,
             true,
         );
+        console.log(mainProduct);
         return new Menu(menuConfig, mainProduct);
     }
 }

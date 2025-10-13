@@ -1,0 +1,39 @@
+<app-header-image />
+<main>
+    <h1>Votre commande</h1>
+    @for (menu of orderService.menuList(); track menu) {
+        <div class="summary-wrapper">
+            <img [src]="menu.image" [alt]="menu.name" />
+            <div class="item-detail">
+                <h3>{{ menu.name }} {{ menu.size }}</h3>
+                <div class="item-composition">
+                    <h4>{{ menu.main.name }}</h4>
+                    <h4>{{ menu.side?.name }}</h4>
+                    <h4>{{ menu.drink?.name }}</h4>
+                </div>
+            </div>
+            <h3 class="item-price">{{ menu.price }}€</h3>
+        </div>
+    }
+    @for (product of orderService.productList(); track product) {
+        <div class="summary-wrapper">
+            <img [src]="product.image" [alt]="product.name" />
+            <div class="item-detail">
+                <h3>{{ product.name }}</h3>
+                <!-- <div class="item-composition">
+                    <h4>{{ menu.main.name }}</h4>
+                    <h4>{{ menu.side?.name }}</h4>
+                    <h4>{{ menu.drink?.name }}</h4>
+                </div> -->
+            </div>
+            <h3 class="item-price">{{ product.price }}€</h3>
+        </div>
+    }
+</main>
+<div class="footer">
+    <div class="total">
+        <h2 class="total-text">Total</h2>
+        <h2 class="total-text">{{ orderService.totalOrderPrice() }}</h2>
+    </div>
+    <app-selection-footer (confirmed)="onConfirm()" />
+</div>

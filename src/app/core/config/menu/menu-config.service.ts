@@ -26,7 +26,11 @@ export class MenuConfigService {
     getMenuByName(name: string): MenuConfig {
         const menu = this.menuList.find((menu) => menu.name === name);
         if (!menu) throw new Error('Menu not found by name');
-        return menu;
+        const formatedMenu = {
+            ...menu,
+            image: this.formatImagePath(menu.image),
+        };
+        return formatedMenu;
     }
 
     private formatImagePath(url: string): string {
