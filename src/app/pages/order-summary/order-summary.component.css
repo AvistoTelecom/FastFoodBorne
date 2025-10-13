@@ -7,6 +7,10 @@ main {
   gap: calc(var(--spacer) * 3);
 }
 
+.title {
+  margin-top: var(--spacer)
+}
+
 .summary-wrapper {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -29,9 +33,11 @@ img {
 
 .item-detail {
   margin-top: var(--spacer);
+  display: flex;
   flex-direction: column;
-  align-items:start;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacer);
   grid-column: 2;
 }
 
@@ -41,6 +47,16 @@ img {
   flex-direction: column;
   align-items:start;
   justify-content: center;
+  overflow: scroll;
+  height: fit-content;
+}
+
+.btn-modify{
+  background-color: var(--color-primary);
+  width: 140px;
+  height: 45px;
+  border-radius: 16px;
+  font-size: 20px;
 }
 
 .item-price {
@@ -77,6 +93,14 @@ img {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.supplement {
+  color: var(--color-valid)
+}
+
+.deleted-ingredient{
+  color: var(--color-danger);
 }
 
 

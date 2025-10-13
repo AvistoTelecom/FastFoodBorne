@@ -30,4 +30,16 @@ export class Product {
             0,
         );
     }
+
+    get hasSupplement(): boolean {
+        return this.supplementList.some(
+            (ingredient) => ingredient.quantity > 0,
+        );
+    }
+
+    get hasDeletedIngredient(): boolean {
+        return this.ingredientList.some(
+            (ingredient) => ingredient.quantity !== ingredient.initialQuantity,
+        );
+    }
 }
