@@ -1,7 +1,7 @@
 <button (click)="itemSelected.emit()">
     <img [src]="item().image" [alt]="item().name" draggable="false" />
-    <h2>{{ item().name }}</h2>
-    <p class="price">
+    <h4>{{ item().name }}</h4>
+    <p>
         <span class="old">{{ oldPrice() }}€</span><b>{{ item().price }}€</b>
     </p>
 </button>

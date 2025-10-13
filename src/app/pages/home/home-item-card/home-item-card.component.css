@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 6px;
+    gap: var(--spacer);
     width: 255px;
 }
 
@@ -12,32 +12,12 @@ img {
     height: 145px;
 }
 
-h2 {
-    text-align: center;
-    font-family: overpass, sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    margin: 0;
-}
-
-p {
-    text-align: center;
-    margin: 0;
-}
-
 .detail-button {
     width: fit-content;
-    padding: 2px 12px;
+    padding: 2px var(--spacer);
     border-radius: 24px;
     background-color: var(--color-primary);
     border: none;
-    font-family: Interstate, sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-}
-
-.price {
-    font-family: Interstate, sans-serif;
     font-weight: 400;
     font-size: 24px;
 }

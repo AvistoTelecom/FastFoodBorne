@@ -25,18 +25,18 @@ img {
         flex: 100% 0 0;
     }
 
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .carousel::-webkit-scrollbar {
-    display: none; /* Older Safari and Chromium */
+    display: none;
 }
 
 .card {
     width: 200px;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: calc(var(--spacer) * 2);
+    margin-left: calc(var(--spacer) * 2);
     color: black;
     background-color: white;
     border-radius: 24px;
@@ -45,18 +45,13 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 0.5px solid var(--color-secondary)
+    border: 0.5px solid var(--color-secondary);
 }
 
 .card p {
-    font-family: Interstate, sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-    margin: 0;
-    padding: 10px;
+    padding: var(--spacer);
 }
 
-
 .is-selected {
-  background-color: var(--color-primary);
+    background-color: var(--color-primary);
 }
