@@ -33,7 +33,7 @@
     <button
         class="btn-order"
         [disabled]="orderService.totalOrderPrice() === 0"
-        [routerLink]="['/order-summary']"
+        (click)="validCommand()"
     >
         Ma commande
         <br />

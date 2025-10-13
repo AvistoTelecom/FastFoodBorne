@@ -16,6 +16,8 @@ import { MenuConfigService } from '../../core/config/menu/menu-config.service';
 import { MenuConfig } from '../../core/config/menu/model';
 import { ProductConfig } from '../../core/config/product/model';
 import { OrderService } from '../../core/services/order.service';
+import { DessertModalComponent } from '../../modal/dessert-modal/dessert-modal.component';
+import { Dialog } from '@angular/cdk/dialog';
 
 @Component({
     selector: 'app-home',
@@ -32,12 +34,12 @@ import { OrderService } from '../../core/services/order.service';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-    // readonly menuService = inject(MenuService);
     readonly router = inject(Router);
     categoryService = inject(CategoryConfigService);
     productService = inject(ProductConfigService);
     menuConfigService = inject(MenuConfigService);
     orderService = inject(OrderService);
+    dialog = inject(Dialog);
 
     categoryList = this.categoryService.categoryList;
 
@@ -74,5 +76,13 @@ export class HomeComponent {
     onAbandon(): void {
         this.orderService.flushOrder();
         this.router.navigate(['/splash-screen']);
+    }
+
+    validCommand() {
+        this.dialog.open(DessertModalComponent).closed.subscribe((result) => {
+            if (result === 'confirmed') {
+                this.router.navigate(['/order-summary']);
+            }
+        });
     }
 }
