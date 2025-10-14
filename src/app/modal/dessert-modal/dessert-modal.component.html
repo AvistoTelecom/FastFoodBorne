@@ -10,7 +10,15 @@
         }
     </div>
     <div class="button-wrapper">
-        <button class="cancel-button" (click)="onCancel()">Annuler</button>
-        <button class="validate-button" (click)="onValidate()">Valider</button>
+        <app-small-button
+            label="Annuler"
+            (clicked)="onCancel()"
+            level="danger"
+        />
+        <app-small-button
+            label="Valider"
+            (clicked)="onValidate()"
+            level="success"
+        />
     </div>
 </div>

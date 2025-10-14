@@ -8,13 +8,14 @@ import {
 import { ModalProductComponent } from './modal-product/modal-product.component';
 import { ProductService } from '../../core/services/product.service';
 import { DialogRef } from '@angular/cdk/dialog';
-import { Product } from '../../core/models/product.class';
+import { Product } from '../../core/value-object/product.class';
 import { OrderService } from '../../core/services/order.service';
+import { SmallButtonComponent } from '../../core/components/small-button/small-button.component';
 
 @Component({
     selector: 'app-dessert-modal',
     standalone: true,
-    imports: [CommonModule, ModalProductComponent],
+    imports: [CommonModule, ModalProductComponent, SmallButtonComponent],
     templateUrl: './dessert-modal.component.html',
     styleUrl: './dessert-modal.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,

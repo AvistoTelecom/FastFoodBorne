@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { Ingredient } from '../models/ingredient.class';
+import { Ingredient } from '../value-object/ingredient.class';
 import { IngredientConfigService } from '../config/ingredient/ingredient-config.service';
 import { QuantifiedIngredientName } from '../config/product/model';
 

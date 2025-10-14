@@ -6,7 +6,7 @@
     width: 750px;
     border: 2px solid var(--color-secondary);
     border-radius: 24px;
-    padding-top: calc(var(--spacer) * 4)
+    padding: calc(var(--spacer) * 4) 0;
 }
 
 .dessert-wrapper {
@@ -18,23 +18,8 @@
     margin: calc(var(--spacer) * 4) 0;
 }
 
-button {
-    width: 180px;
-    height: 60px;
-    font-size: 38px;
-    border-radius: 36px;
-}
-
 .button-wrapper {
-    padding-bottom: calc(var(--spacer) * 3);
-}
-
-.cancel-button {
-    background-color: var(--color-primary);
-}
-
-.validate-button {
-    margin-left: calc(var(--spacer) * 3);
-    background-color: var(--color-valid);
-    color: white;
+    display: flex;
+    justify-content: center;
+    gap: var(--spacer);
 }
