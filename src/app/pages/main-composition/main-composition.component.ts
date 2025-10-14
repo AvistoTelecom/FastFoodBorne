@@ -11,7 +11,7 @@ import { HeaderImageComponent } from '../../core/components/header-image/header-
 import { ProductSelectorComponent } from '../../core/components/product-selector/product-selector.component';
 import { IngredientConfigService } from '../../core/config/ingredient/ingredient-config.service';
 import { ProductConfigService } from '../../core/config/product/product-config.service';
-import { Menu } from '../../core/models/menu.class';
+import { Menu } from '../../core/value-object/menu.class';
 
 @Component({
     selector: 'app-main-composition',

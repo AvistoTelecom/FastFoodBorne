@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { MenuConfigService } from '../config/menu/menu-config.service';
-import { Menu } from '../models/menu.class';
+import { Menu } from '../value-object/menu.class';
 import { ProductService } from './product.service';
 
 @Injectable({
