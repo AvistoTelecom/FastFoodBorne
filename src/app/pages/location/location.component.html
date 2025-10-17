@@ -2,14 +2,8 @@
 <h1 class="text-center margin">Où souhaitez-vous manger ?</h1>
 
 <div class="btn-column">
-    <app-option-button
-        image="assets/global/Niche.webp"
-        label="Sur place"
-        (clicked)="onNavigate()"
-    ></app-option-button>
-    <app-option-button
-        image="assets/global/ChienLaisse.webp"
-        label="A emporter"
-        (clicked)="onNavigate()"
-    ></app-option-button>
+    <button (click)="onNavigate()">
+        <h2>A emporter</h2>
+        <img src="assets/global/ChienLaisse.webp" alt="A emporter" />
+    </button>
 </div>
