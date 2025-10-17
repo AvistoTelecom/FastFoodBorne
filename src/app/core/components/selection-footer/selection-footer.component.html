@@ -1,5 +1,5 @@
 <div class="btn-container">
-    <button class="button-cancel" [routerLink]="['/home']">Annuler</button>
+    <button class="button-cancel" (click)="onCancel()">Annuler</button>
     <button
         class="button-confirm"
         [disabled]="isConfirmDisabled()"

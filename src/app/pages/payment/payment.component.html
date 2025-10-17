@@ -11,7 +11,7 @@
         </button>
         <h3 class="text-indisponible text-center">Hors service</h3>
     </div>
-    <button class="btn-available" [routerLink]="['/bill']">
+    <button class="btn-available" (click)="toBill()">
         <h2>Au comptoir</h2>
         <img
             class="comptoir"

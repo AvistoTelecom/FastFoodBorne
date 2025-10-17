@@ -2,11 +2,11 @@
 <h1 class="text-center margin">Où souhaitez-vous manger ?</h1>
 
 <div class="btn-column">
-    <button [routerLink]="['/home']">
+    <button (click)="onNavigate()">
         <h2>Sur place</h2>
         <img class="couvert" src="assets/global/Niche.webp" alt="Niche" />
     </button>
-    <button [routerLink]="['/home']">
+    <button (click)="onNavigate()">
         <h2>A emporter</h2>
         <img
             class="emporter"

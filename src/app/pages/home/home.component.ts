@@ -9,7 +9,7 @@ import {
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
 import { HomeItemCardComponent } from './home-item-card/home-item-card.component';
 import { ProductCarouselComponent } from './product-carousel/product-carousel.component';
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { CategoryConfigService } from '../../core/config/category/category-config.service';
 import { ProductConfigService } from '../../core/config/product/product-config.service';
 import { MenuConfigService } from '../../core/config/menu/menu-config.service';
@@ -23,7 +23,6 @@ import { Dialog } from '@angular/cdk/dialog';
     standalone: true,
     imports: [
         CommonModule,
-        RouterModule,
         HeaderImageComponent,
         HomeItemCardComponent,
         ProductCarouselComponent,
