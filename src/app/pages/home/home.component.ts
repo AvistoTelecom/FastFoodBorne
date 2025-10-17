@@ -14,7 +14,6 @@ import { CategoryConfigService } from '../../core/config/category/category-confi
 import { ProductConfigService } from '../../core/config/product/product-config.service';
 import { MenuConfigService } from '../../core/config/menu/menu-config.service';
 import { MenuConfig } from '../../core/config/menu/model';
-import { ProductConfig } from '../../core/config/product/model';
 import { OrderService } from '../../core/services/order.service';
 import { DessertModalComponent } from '../../modal/dessert-modal/dessert-modal.component';
 import { Dialog } from '@angular/cdk/dialog';
@@ -63,12 +62,6 @@ export class HomeComponent {
     onMenuSelected(menu: MenuConfig): void {
         this.router.navigate(['/menu-composition'], {
             queryParams: { menuName: menu.name },
-        });
-        return;
-    }
-    onProductSelected(product: ProductConfig): void {
-        this.router.navigate(['/main-composition'], {
-            queryParams: { productName: product.name },
         });
         return;
     }

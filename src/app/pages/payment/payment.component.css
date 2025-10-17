@@ -62,3 +62,8 @@ h1 {
     letter-spacing: 0%;
     background-color: var(--color-danger);
 }
+
+img{
+    width: 195px;
+    height: 150px;
+}

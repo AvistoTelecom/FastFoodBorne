@@ -20,10 +20,7 @@
         <h3>A l'unité</h3>
         <div class="product-container">
             @for (product of productList(); track product.name) {
-                <app-home-item-card
-                    [item]="product"
-                    (itemSelected)="onProductSelected(product)"
-                />
+                <app-home-item-card [item]="product" />
             }
         </div>
     </div>
@@ -35,7 +32,7 @@
         [disabled]="orderService.totalOrderPrice() === 0"
         (click)="validCommand()"
     >
-        Ma commande
+        Ma gamelle
         <br />
         @if (orderService.totalOrderPrice() > 0) {
             {{ orderService.totalOrderPrice() }}€

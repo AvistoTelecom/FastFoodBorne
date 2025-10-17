@@ -1,6 +1,6 @@
 <app-header-image />
 <main>
-    <h1 class="title">Votre commande</h1>
+    <h1 class="title">Votre gamelle</h1>
     @for (menu of orderService.menuList(); track menu) {
         <div class="summary-wrapper">
             <img [src]="menu.image" [alt]="menu.name" />
