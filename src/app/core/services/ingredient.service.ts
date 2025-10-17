@@ -17,19 +17,6 @@ const supplementNameList: string[] = [
 export class IngredientService {
     ingredientConfigService = inject(IngredientConfigService);
 
-    getIngredientByQuantified(
-        quantifiedIngredientName: QuantifiedIngredientName,
-    ): Ingredient {
-        const config = this.ingredientConfigService.getIngredientByName(
-            quantifiedIngredientName.name,
-        );
-        return new Ingredient(config, quantifiedIngredientName.quantity);
-    }
-
-    getIngredientByName(name: string, quantity: number): Ingredient {
-        const config = this.ingredientConfigService.getIngredientByName(name);
-        return new Ingredient(config, quantity);
-    }
     getIngredientListByQuantifiedList(
         quantifiedIngredientNameList: QuantifiedIngredientName[],
     ): Ingredient[] {

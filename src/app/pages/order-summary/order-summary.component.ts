@@ -21,22 +21,6 @@ export class OrderSummaryComponent {
     productService = inject(ProductService);
     menuService = inject(MenuService);
 
-    constructor() {
-        // const menu = this.menuService.getMenu('Menu Doggo');
-        // const drink = this.productService.getDrinkProductList()[1];
-        // const side = this.productService.getSideProductList()[1];
-        // menu.main.supplementList[0].addQuantity();
-        // menu.main.supplementList[1].addQuantity();
-        // menu.main.supplementList[2].addQuantity();
-        // menu.main.supplementList[3].addQuantity();
-        // menu.main.supplementList[4].addQuantity();
-        // menu.changeDrink(drink);
-        // menu.changeSide(side);
-        // this.orderService.addMenu(menu);
-        // this.orderService.addProduct(drink);
-        // this.orderService.addProduct(side);
-    }
-
     onConfirm(): void {
         this.router.navigate(['/payment']);
     }
