@@ -43,15 +43,26 @@ export class MenuCompositionComponent {
     readonly menu: Signal<Menu>;
 
     menuName = this.route.snapshot.queryParams['menuName'];
+    index = this.route.snapshot.queryParams['index'];
     readonly sideProductList = this.productService.getSideProductList();
     readonly drinkProductList = this.productService.getDrinkProductList();
 
     constructor() {
+        if (this.isMenuAlreadyInOrder()) {
+            this.menu = signal(this.orderService.menuList()[this.index]);
+            return;
+        }
         this.menu = signal(this.menuService.getMenu(this.menuName));
     }
 
     onConfirm(): void {
+        if (!this.isMenuAlreadyInOrder()) {
+            this.orderService.addMenu(this.menu());
+        }
         this.router.navigate(['/home']);
-        this.orderService.addMenu(this.menu());
+    }
+
+    private isMenuAlreadyInOrder(): boolean {
+        return !!this.index;
     }
 }

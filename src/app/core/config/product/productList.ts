@@ -16,6 +16,13 @@ export const ProductList: ProductConfig[] = [
         ingredientNameList: [{ name: 'Glaçons', quantity: 1 }],
     },
     {
+        image: 'ScoobySnack.webp',
+        name: 'Scooby Snack',
+        price: 3,
+        type: 'dessert',
+        ingredientNameList: [],
+    },
+    {
         image: 'Cookie.webp',
         name: 'Cookie',
         price: 2,

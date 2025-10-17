@@ -61,10 +61,14 @@ export class Menu {
     }
 
     get totalPrice(): number {
-        return [this.main, this._side, this._drink].reduce((total, product) => {
-            if (!product) return total;
-            return total + product.supplementPrice;
-        }, this.price + this.sizePrice);
+        const price = [this.main, this._side, this._drink].reduce(
+            (total, product) => {
+                if (!product) return total;
+                return total + product.supplementPrice;
+            },
+            this.price + this.sizePrice,
+        );
+        return +price.toFixed(2);
     }
 
     get isValid(): boolean {

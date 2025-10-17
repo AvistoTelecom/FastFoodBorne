@@ -44,7 +44,6 @@ export class OrderService {
     });
 
     totalOrderPrice = computed<number>(() => {
-        console.log(this.menuList()[0]);
         return +(this.totalProductPrice() + this.totalMenuPrice()).toFixed(2);
     });
 
