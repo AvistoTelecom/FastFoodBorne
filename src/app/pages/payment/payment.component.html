@@ -4,16 +4,10 @@
 </div>
 
 <div class="btn-column">
-    <app-option-button
-        label="A la borne"
-        image="assets/global/borne.webp"
-        [isDisabled]="true"
-    ></app-option-button>
-    <app-option-button
-        label="Au comptoir"
-        image="assets/global/comptoir.webp"
-        (clicked)="toBill()"
-    ></app-option-button>
+    <button (click)="toBill()">
+        <h2>Au comptoir</h2>
+        <img src="assets/global/comptoir.webp" alt="Au comptoir" />
+    </button>
 
     <app-small-button label="Retour" level="danger" (clicked)="toMenu()" />
 </div>
