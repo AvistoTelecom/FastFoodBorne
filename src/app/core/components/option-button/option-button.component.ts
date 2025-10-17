@@ -15,9 +15,10 @@ import {
 export class OptionButtonComponent {
     image = input.required<string>();
     label = input.required<string>();
-    locationSelection = output<void>();
+    isDisabled = input<boolean>(false);
+    clicked = output<void>();
 
-    onLocationSelect(): void {
-        this.locationSelection.emit();
+    onClick(): void {
+        this.clicked.emit();
     }
 }

@@ -1,4 +1,7 @@
-<button (click)="onLocationSelect()">
+<button [disabled]="isDisabled()" (click)="onClick()">
     <h2>{{ label() }}</h2>
     <img [src]="image()" [alt]="label()" />
 </button>
+@if (isDisabled()) {
+    <h2 class="disabled-text">Hors service</h2>
+}

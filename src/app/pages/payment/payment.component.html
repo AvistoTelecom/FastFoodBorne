@@ -4,20 +4,16 @@
 </div>
 
 <div class="btn-column">
-    <div class="container-unavailable">
-        <button class="btn-unavailable">
-            <h2>A la borne</h2>
-            <img class="borne" src="assets/global/borne.webp" alt="Borne" />
-        </button>
-        <h3 class="text-indisponible text-center">Hors service</h3>
-    </div>
-    <button class="btn-available" (click)="toBill()">
-        <h2>Au comptoir</h2>
-        <img
-            class="comptoir"
-            src="assets/global/comptoir.webp"
-            alt="Comptoir"
-        />
-    </button>
+    <app-option-button
+        label="A la borne"
+        image="assets/global/borne.webp"
+        [isDisabled]="true"
+    ></app-option-button>
+    <app-option-button
+        label="Au comptoir"
+        image="assets/global/comptoir.webp"
+        (clicked)="toBill()"
+    ></app-option-button>
+
     <app-small-button label="Retour" level="danger" (clicked)="toMenu()" />
 </div>
