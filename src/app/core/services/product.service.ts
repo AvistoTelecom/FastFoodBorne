@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { ProductConfigService } from '../config/product/product-config.service';
 import { IngredientService } from './ingredient.service';
-import { Product } from '../models/product.class';
+import { Product } from '../value-object/product.class';
 import { ProductConfig } from '../config/product/model';
 
 @Injectable({

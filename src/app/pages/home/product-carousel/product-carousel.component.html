@@ -1,18 +1,26 @@
 <div class="carousel">
     <div class="group">
         @for (category of categoryList(); track category.name) {
-            <button
-                class="card"
-                [class]="
-                    category.name === selectedCategoryName()
-                        ? 'is-selected'
-                        : ''
-                "
-                (click)="select(category.name)"
-            >
-                <img [src]="category.image" alt="menu" draggable="false" />
-                <p>{{ category.name }}</p>
-            </button>
+            @if (category.productNameList.length === 0) {
+                <button disabled class="card">
+                    <img [src]="category.image" alt="menu" draggable="false" />
+                    <h3 class="empty-text">Indisponible</h3>
+                    <p>{{ category.name }}</p>
+                </button>
+            } @else {
+                <button
+                    class="card"
+                    [class]="
+                        category.name === selectedCategoryName()
+                            ? 'is-selected'
+                            : ''
+                    "
+                    (click)="select(category.name)"
+                >
+                    <img [src]="category.image" alt="menu" draggable="false" />
+                    <p>{{ category.name }}</p>
+                </button>
+            }
         }
     </div>
 </div>

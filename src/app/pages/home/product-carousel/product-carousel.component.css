@@ -52,6 +52,25 @@ img {
     padding: var(--spacer);
 }
 
+.card:disabled {
+    cursor: not-allowed;
+}
+
+.card:disabled img, .card:disabled p {
+    opacity: 0.5;
+}
+
+.empty-text {
+    opacity: 1;
+    position: absolute;
+    margin-top: -60px;
+    font-weight: bold;
+    color: var(--color-danger);
+    rotate: -30deg;
+}
+
+
 .is-selected {
     background-color: var(--color-primary);
 }
+

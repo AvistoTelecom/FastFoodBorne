@@ -4,7 +4,7 @@ import {
     input,
     output,
 } from '@angular/core';
-import { Ingredient } from '../../models/ingredient.class';
+import { Ingredient } from '../../value-object/ingredient.class';
 
 @Component({
     selector: 'app-supplement-card',

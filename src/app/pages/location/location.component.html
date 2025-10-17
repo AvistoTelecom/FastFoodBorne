@@ -1,17 +1,15 @@
 <app-header-image />
-<h1 class="text-center margin">Ou souhaitez-vous manger ?</h1>
+<h1 class="text-center margin">Où souhaitez-vous manger ?</h1>
 
 <div class="btn-column">
-    <button [routerLink]="['/home']">
-        <h2>Sur place</h2>
-        <img class="couvert" src="assets/global/Couverts.webp" alt="Couverts" />
-    </button>
-    <button [routerLink]="['/home']">
-        <h2>A emporter</h2>
-        <img
-            class="emporter"
-            src="assets/global/Sac-a-emporter.webp"
-            alt="A emporter"
-        />
-    </button>
+    <app-option-button
+        image="assets/global/Niche.webp"
+        label="Sur place"
+        (clicked)="onNavigate()"
+    ></app-option-button>
+    <app-option-button
+        image="assets/global/ChienLaisse.webp"
+        label="A emporter"
+        (clicked)="onNavigate()"
+    ></app-option-button>
 </div>

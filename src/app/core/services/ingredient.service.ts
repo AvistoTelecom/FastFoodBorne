@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { Ingredient } from '../models/ingredient.class';
+import { Ingredient } from '../value-object/ingredient.class';
 import { IngredientConfigService } from '../config/ingredient/ingredient-config.service';
 import { QuantifiedIngredientName } from '../config/product/model';
 
@@ -17,19 +17,6 @@ const supplementNameList: string[] = [
 export class IngredientService {
     ingredientConfigService = inject(IngredientConfigService);
 
-    getIngredientByQuantified(
-        quantifiedIngredientName: QuantifiedIngredientName,
-    ): Ingredient {
-        const config = this.ingredientConfigService.getIngredientByName(
-            quantifiedIngredientName.name,
-        );
-        return new Ingredient(config, quantifiedIngredientName.quantity);
-    }
-
-    getIngredientByName(name: string, quantity: number): Ingredient {
-        const config = this.ingredientConfigService.getIngredientByName(name);
-        return new Ingredient(config, quantity);
-    }
     getIngredientListByQuantifiedList(
         quantifiedIngredientNameList: QuantifiedIngredientName[],
     ): Ingredient[] {

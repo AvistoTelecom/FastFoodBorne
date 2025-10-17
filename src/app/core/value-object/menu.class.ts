@@ -14,7 +14,7 @@ export class Menu {
         {
             name: 'classic',
             price: 0,
-            image: '/assets/global/Pourquoi ma gamelle est vide _.png',
+            image: '/assets/global/classic-size.png',
         },
         { name: 'XL', price: 1.99, image: '/assets/global/xl-size.png' },
     ] as const;
@@ -61,10 +61,14 @@ export class Menu {
     }
 
     get totalPrice(): number {
-        return [this.main, this._side, this._drink].reduce((total, product) => {
-            if (!product) return total;
-            return total + product.supplementPrice;
-        }, this.price + this.sizePrice);
+        const price = [this.main, this._side, this._drink].reduce(
+            (total, product) => {
+                if (!product) return total;
+                return total + product.supplementPrice;
+            },
+            this.price + this.sizePrice,
+        );
+        return +price.toFixed(2);
     }
 
     get isValid(): boolean {

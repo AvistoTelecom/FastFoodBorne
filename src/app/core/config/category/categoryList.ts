@@ -61,13 +61,19 @@ export const CategoryList: CategoryConfig[] = [
     {
         image: 'Couscous.webp',
         name: 'Couscous',
-        productNameList: ['Couscous'],
+        productNameList: [],
         menuNameList: [],
     },
     {
         image: 'Cookie.webp',
         name: 'Dessert',
-        productNameList: ['Salade de fruits', 'Muffin', 'Glace', 'Cookie'],
+        productNameList: [
+            'Salade de fruits',
+            'Muffin',
+            'Glace',
+            'Cookie',
+            'Scooby Snack',
+        ],
         menuNameList: [],
     },
 ];
