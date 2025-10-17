@@ -52,17 +52,6 @@ h1 {
     color: var(--color-danger);
 }
 
-.btn {
-    color: white;
-    border-radius: 24px;
-    padding: calc(var(--spacer) * 2) calc(var(--spacer) * 5);
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    background-color: var(--color-danger);
-}
-
 img{
     width: 195px;
     height: 150px;
