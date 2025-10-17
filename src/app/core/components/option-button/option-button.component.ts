@@ -6,13 +6,13 @@ import {
 } from '@angular/core';
 
 @Component({
-    selector: 'app-location-option',
+    selector: 'app-option-button',
     imports: [],
-    templateUrl: './location-option.component.html',
-    styleUrl: './location-option.component.css',
+    templateUrl: './option-button.component.html',
+    styleUrl: './option-button.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LocationOptionComponent {
+export class OptionButtonComponent {
     image = input.required<string>();
     label = input.required<string>();
     locationSelection = output<void>();
