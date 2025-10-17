@@ -15,7 +15,6 @@ import {
 export class OptionButtonComponent {
     image = input.required<string>();
     label = input.required<string>();
-    isDisabled = input<boolean>(false);
     clicked = output<void>();
 
     onClick(): void {

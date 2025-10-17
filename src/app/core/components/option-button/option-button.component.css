@@ -16,15 +16,3 @@ button {
     padding-bottom: calc(var(--spacer) * 2);
     border: 1px solid #965923;
 }
-
-button:disabled {
-    opacity: 0.5;
-}
-
-.disabled-text {
-    opacity: 1;
-    position: absolute;
-    font-weight: bold;
-    color: var(--color-danger);
-    margin-left: calc(var(--spacer)*9);
-}
