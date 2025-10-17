@@ -15,7 +15,6 @@ import { ProductConfigService } from '../../core/config/product/product-config.s
 import { MenuConfigService } from '../../core/config/menu/menu-config.service';
 import { MenuConfig } from '../../core/config/menu/model';
 import { OrderService } from '../../core/services/order.service';
-import { DessertModalComponent } from '../../modal/dessert-modal/dessert-modal.component';
 import { Dialog } from '@angular/cdk/dialog';
 
 @Component({
@@ -71,10 +70,10 @@ export class HomeComponent {
     }
 
     validCommand() {
-        this.dialog.open(DessertModalComponent).closed.subscribe((result) => {
-            if (result === 'confirmed') {
-                this.router.navigate(['/order-summary']);
-            }
-        });
+        // this.dialog.open(DessertModalComponent).closed.subscribe((result) => {
+        //     if (result === 'confirmed') {
+        //         this.router.navigate(['/order-summary']);
+        //     }
+        // });
     }
 }
