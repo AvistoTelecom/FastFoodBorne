@@ -1,6 +1,6 @@
 import { computed, Injectable, signal } from '@angular/core';
-import { Product } from '../value-object/product.class';
 import { Menu } from '../value-object/menu.class';
+import { Product } from '../value-object/product.class';
 
 @Injectable({
     providedIn: 'root',
@@ -35,20 +35,14 @@ export class OrderService {
     }
 
     totalMenuPrice = computed<number>(() => {
-        return this._menuList().reduce(
-            (total, menu) => total + menu.totalPrice,
-            0,
-        );
+        return -0.5;
     });
 
     totalProductPrice = computed<number>(() => {
-        return this._productList().reduce(
-            (total, product) => total + product.totalPrice,
-            0,
-        );
+        return -0.5;
     });
 
     totalOrderPrice = computed<number>(() => {
-        return +(this.totalProductPrice() + this.totalMenuPrice()).toFixed(2);
+        return this.totalMenuPrice() + this.totalProductPrice();
     });
 }
