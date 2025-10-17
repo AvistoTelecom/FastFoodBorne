@@ -5,23 +5,22 @@
         [(selectedCategoryName)]="selectedCategoryName"
     />
     <div class="column-product">
-        @if (menuList().length > 0) {
-            <h3>Menus</h3>
-            <div class="product-container">
-                @for (menu of menuList(); track menu.name) {
-                    <app-home-item-card
-                        [item]="menu"
-                        (itemSelected)="onMenuSelected(menu)"
-                    />
-                }
-            </div>
-            <hr />
-        }
+        <h3>Menus</h3>
+
+        <div class="product-container">
+            <app-home-item-card
+                [item]="menuList()[0]"
+                (itemSelected)="onMenuSelected(menuList()[0])"
+            />
+            <app-home-item-card
+                [item]="menuList()[1]"
+                (itemSelected)="onMenuSelected(menuList()[1])"
+            />
+        </div>
+        <hr />
         <h3>A l'unité</h3>
         <div class="product-container">
-            @for (product of productList(); track product.name) {
-                <app-home-item-card [item]="product" />
-            }
+            <app-home-item-card [item]="productList()[0]" />
         </div>
     </div>
 </main>
