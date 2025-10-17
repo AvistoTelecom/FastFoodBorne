@@ -30,13 +30,6 @@ export const ProductList: ProductConfig[] = [
         ingredientNameList: [],
     },
     {
-        image: 'Couscous.webp',
-        name: 'Couscous',
-        price: 12.99,
-        type: 'main',
-        ingredientNameList: [],
-    },
-    {
         image: 'Eau.webp',
         name: 'Eau',
         price: 3,
