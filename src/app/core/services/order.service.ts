@@ -1,4 +1,4 @@
-import { computed, Injectable, Signal, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 import { Menu } from '../value-object/menu.class';
 import { Product } from '../value-object/product.class';
 
