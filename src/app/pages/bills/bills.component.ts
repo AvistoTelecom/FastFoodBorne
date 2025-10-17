@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
 import { AnimationOptions, LottieComponent } from 'ngx-lottie';
+import { Dialog } from '@angular/cdk/dialog';
+import { ModalEndingComponent } from '../../modal/modal-ending/modal-ending.component';
 
 @Component({
     selector: 'app-bills',
@@ -11,6 +13,12 @@ import { AnimationOptions, LottieComponent } from 'ngx-lottie';
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BillsComponent {
+    dialog = inject(Dialog);
+
+    constructor() {
+        this.dialog.open(ModalEndingComponent);
+    }
+
     lottieOptions: AnimationOptions = {
         path: '/assets/global/PattesChienValide.json',
     };
