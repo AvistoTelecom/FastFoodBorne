@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
 import { OptionButtonComponent } from '../../core/components/option-button/option-button.component';
+import { OrderService } from '../../core/services/order.service';
 
 @Component({
     selector: 'app-location',
@@ -14,8 +15,10 @@ import { OptionButtonComponent } from '../../core/components/option-button/optio
 })
 export class LocationComponent {
     router = inject(Router);
+    orderService = inject(OrderService);
 
-    onNavigate(): void {
+    onNavigate(location: string): void {
+        this.orderService.location = location;
         this.router.navigate(['/home']);
     }
 }
