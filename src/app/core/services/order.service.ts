@@ -29,6 +29,11 @@ export class OrderService {
         this._menuList.set([...this._menuList(), menu]);
     }
 
+    flushOrder(): void {
+        this._productList.set([]);
+        this._menuList.set([]);
+    }
+
     totalMenuPrice = computed<number>(() => {
         return this._menuList().reduce(
             (total, menu) => total + menu.totalPrice,
@@ -46,9 +51,4 @@ export class OrderService {
     totalOrderPrice = computed<number>(() => {
         return +(this.totalProductPrice() + this.totalMenuPrice()).toFixed(2);
     });
-
-    flushOrder(): void {
-        this._productList.set([]);
-        this._menuList.set([]);
-    }
 }
