@@ -25,10 +25,7 @@ export class Product {
     }
 
     get supplementPrice(): number {
-        return this.supplementList.reduce(
-            (total, ingredient) => total + ingredient.totalPrice,
-            0,
-        );
+        return -1;
     }
 
     get hasSupplement(): boolean {
