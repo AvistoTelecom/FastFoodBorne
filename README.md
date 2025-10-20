@@ -201,7 +201,7 @@ De plus, certains produits comme le *couscous* ont disparu, mais leur catégorie
 ➡️ Désactivez les catégories vides afin d’éviter toute confusion pour l’utilisateur.
 
 ### Step 4 — Gestion des suppléments avec un Value Object
-**Concepts :** `value-object`  
+**Concepts :** `value-object`, `fonction js`  
 **Commande Git :**
 ```bash
 git switch Step4
@@ -283,4 +283,5 @@ La troisième colonne est laissée vide pour que vous puissiez y insérer des li
 | **Value-Object**                  | Un **Value Object** est un objet métier immuable représentant une valeur cohérente (ex : prix, coordonnées, quantité). Il encapsule la logique de validation et de transformation, favorisant la robustesse et la maintenabilité du code.                                            | https://en.wikipedia.org/wiki/Value_object                                                    |
 | **Control flow (@if, @for)**      | Les  **control flow** Angular (`@if`, `@for`, `@switch`). Plus performants et plus lisibles, ils améliorent la clarté et la compilation du DOM.                                                                                                                                      | https://angular.dev/guide/templates/control-flow                                              |
 | **Event Binding**                 | L’**Event Binding** (`(event)="handler()"`) relie un événement du DOM (clic, saisie, etc.) à une méthode du composant. Angular gère la synchronisation entre le modèle et la vue en toute sécurité.                                                                                  | https://v17.angular.io/guide/event-binding                                                    |
-| **CLI (Command Line Interface)**  | La **CLI Angular** (`@angular/cli`) est l’outil officiel pour créer, développer, tester et déployer des applications Angular. Elle automatise les tâches courantes comme la génération de composants, la compilation ou le linting.                                                  | https://angular.dev/tools/cli                                                                 |
+| **CLI (Command Line Interface)**  | La **CLI Angular** (`@angular/cli`) est l’outil officiel pour créer, développer, tester et déployer des applications Angular. Elle automatise les tâches courantes comme la génération de composants, la compilation ou le linting.                                                  | https://angular.dev/tools/cli    
+| **Function js**  | En js, pour la lisibilité du code on utilisera plutot les functions map, filter et reduce au détriment de for et foreach.| https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d |
