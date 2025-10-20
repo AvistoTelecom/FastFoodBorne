@@ -46,7 +46,7 @@ Cette commande télécharge toutes les dépendances nécessaires au projet (Angu
 ### 4. Lancer le serveur de développement
 
 ```bash
-npm run serve
+npm run start
 ```
 
 Puis ouvrez votre navigateur à l’adresse :  
