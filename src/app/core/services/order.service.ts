@@ -1,4 +1,4 @@
-import { computed, Injectable, Signal, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 import { Menu } from '../value-object/menu.class';
 import { Product } from '../value-object/product.class';
 
@@ -9,6 +9,9 @@ export class OrderService {
     private _productList = signal<Product[]>([]);
     private _menuList = signal<Menu[]>([]);
     private _location = '';
+
+    readonly menuList = this._menuList.asReadonly();
+    readonly productList = this._productList.asReadonly();
 
     set location(location: string) {
         this._location = location;
@@ -22,16 +25,8 @@ export class OrderService {
         this._productList.set([...this._productList(), ...productList]);
     }
 
-    get productList() {
-        return this._productList.asReadonly();
-    }
-
     addMenu(menu: Menu) {
         this._menuList.set([...this._menuList(), menu]);
-    }
-
-    get menuList(): Signal<Menu[]> {
-        return this._menuList.asReadonly();
     }
 
     flushOrder(): void {
