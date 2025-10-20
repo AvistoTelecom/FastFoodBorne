@@ -184,6 +184,11 @@ Lorsqu’un utilisateur clique sur l’écran, rien ne se produit. Il semble que
 git switch Step2
 ```
 
+**Cli component :**
+```bash
+ng g c core/components/option-button
+```
+
 La commande à emporter n’est pas disponible : il manque un bouton.  
 ➡️ Créez un **composant bouton** à l’aide de la **CLI Angular** pour réparer la page et permettre la commande à emporter.
 
