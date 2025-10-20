@@ -30,7 +30,7 @@ Avant de lancer le projet **macDoberman**, assurez-vous d’avoir les outils sui
 ### 2. Cloner le projet
 
 ```bash
-git clone https://github.com/<ton-utilisateur>/<nom-du-repo>.git
+git clone https://github.com/AvistoTelecom/FastFoodBorne.git
 cd macDoberman
 ```
 
@@ -46,7 +46,7 @@ Cette commande télécharge toutes les dépendances nécessaires au projet (Angu
 ### 4. Lancer le serveur de développement
 
 ```bash
-npm run serve
+npm run start
 ```
 
 Puis ouvrez votre navigateur à l’adresse :  
