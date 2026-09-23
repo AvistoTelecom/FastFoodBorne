@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
     ChangeDetectionStrategy,
     Component,
@@ -22,7 +21,6 @@ import { Dialog } from '@angular/cdk/dialog';
     selector: 'app-home',
     standalone: true,
     imports: [
-        CommonModule,
         HeaderImageComponent,
         HomeItemCardComponent,
         ProductCarouselComponent,

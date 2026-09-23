@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
     Component,
     ChangeDetectionStrategy,
@@ -10,7 +9,7 @@ import { Product } from '../../../core/value-object/product.class';
 @Component({
     selector: 'app-modal-product',
     standalone: true,
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './modal-product.component.html',
     styleUrls: ['./modal-product.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush,

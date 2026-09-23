@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
     ChangeDetectionStrategy,
     Component,
@@ -9,7 +8,7 @@ import {
 @Component({
     selector: 'app-header-image',
     standalone: true,
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './header-image.component.html',
     styleUrl: './header-image.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
