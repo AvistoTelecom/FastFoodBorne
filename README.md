@@ -97,8 +97,6 @@ code --install-extension PKief.material-icon-theme
 ```
 
 
-
-
 ## 🗂️ Structure du projet
 
 Voici l’organisation des dossiers du projet **macDoberman**.
@@ -159,94 +157,6 @@ Voici l’organisation des dossiers du projet **macDoberman**.
 - **assets/** → contient les ressources statiques comme les images, icônes et fichiers de traduction.  
 
 Cette structure assure une **claire séparation des responsabilités** et permet aux développeurs de retrouver facilement les composants, services et fichiers de configuration à travers le projet.
-
-
-
-
-## 🧩 Étapes du TP — macDoberman
-
-Ce TP a pour objectif de corriger et compléter progressivement la borne de commande **macDoberman** tout en explorant différents concepts clés d’**Angular 20**.  
-Chaque étape précise les concepts du [glossaire](#) concernés.
-
-### Step 1 — Event Binding
-**Concepts :** `event binding`  
-**Commande Git :**
-```bash
-git switch Step1
-```
-Lorsqu’un utilisateur clique sur l’écran, rien ne se produit. Il semble que le lien entre le **template** et la **logique du composant** soit manquant.  
-➡️ Corrigez la liaison d’événement pour que le clic déclenche bien l’action attendue.
-
-### Step 2 — Création d’un composant avec la CLI
-**Concepts :** `composant`, `CLI`  
-**Commande Git :**
-```bash
-git switch Step2
-```
-
-**Cli component :**
-```bash
-ng g c core/components/option-button
-```
-
-La commande à emporter n’est pas disponible : il manque un bouton.  
-➡️ Créez un **composant bouton** à l’aide de la **CLI Angular** pour réparer la page et permettre la commande à emporter.
-
-### Step 3 — Gestion du template avec @if et @for
-**Concepts :** `template binding (@if, @for)`  
-**Commande Git :**
-```bash
-git switch Step3
-```
-
-La page des offres fonctionne correctement, mais lorsque l’on change de menu, le **template** n’affiche pas correctement les produits de la nouvelle catégorie.  
-➡️ Mettez à jour l’affichage de la liste des produits pour refléter la catégorie sélectionnée.  
-
-De plus, certains produits comme le *couscous* ont disparu, mais leur catégorie reste cliquable.  
-➡️ Désactivez les catégories vides afin d’éviter toute confusion pour l’utilisateur.
-
-### Step 4 — Gestion des suppléments avec un Value Object
-**Concepts :** `value-object`, `fonction js`  
-**Commande Git :**
-```bash
-git switch Step4
-```
-
-Le total des suppléments n’est pas affiché, ce qui peut induire en erreur le consommateur.  
-➡️ Réparez la logique métier et la **fonction de calcul des suppléments** en utilisant un **Value Object** pour encapsuler cette logique.
-
-### Step 5 — Ajout d’une modal et signaux réactifs
-**Concepts :** `modal`, `composant`, `signal`, `computed`  
-**Commande Git :**
-```bash
-git switch Step5
-```
-
-Chez **macDoberman**, nous souhaitons rappeler aux clients qu’ils peuvent s’offrir une petite douceur en dessert 🍰.  
-➡️ Ajoutez une **modal** qui s’affiche avant que l’utilisateur ne quitte la page de sélection, en utilisant des **signals** et **computed** pour gérer son affichage réactif.
-
-### Step 6 — Calcul du prix total via un service réactif
-**Concepts :** `service`, `computed`  
-**Commande Git :**
-```bash
-git switch Step6
-```
-
-En bas de la page, le **prix total de la commande** doit être visible. Malheureusement, la valeur affichée n’est pas correcte.  
-➡️ Corrigez la logique de calcul dans un **service** Angular et utilisez un **computed signal** pour mettre à jour dynamiquement le montant total.
-
-### Step 7 — Navigation et options via le Router
-**Concepts :** `Router`, `SPA`  
-**Commande Git :**
-```bash
-git switch Step7
-```
-
-Une option est de nouveau manquante : le bouton **“À la borne”** n’est pas visible. Cette option doit être présente, mais marquée comme **hors service**.  
-➡️ Ajoutez le bouton correspondant et appliquez-lui un état désactivé.  
-
-De plus, la **navigation** entre la page de paiement et la page de facturation n’est pas encore configurée.  
-➡️ Implémentez la navigation entre ces pages à l’aide du **Router Angular**, en respectant la logique d’une **Single Page Application (SPA)**.
 
 ## 🚀 Aller plus loin
 
