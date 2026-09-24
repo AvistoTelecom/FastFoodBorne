@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
 import { AnimationOptions, LottieComponent } from 'ngx-lottie';
 import { Dialog } from '@angular/cdk/dialog';

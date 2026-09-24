@@ -8,9 +8,14 @@ import { Product } from '../value-object/product.class';
 export class OrderService {
     private _productList = signal<Product[]>([]);
     private _menuList = signal<Menu[]>([]);
+    private _location = '';
 
     readonly menuList = this._menuList.asReadonly();
     readonly productList = this._productList.asReadonly();
+
+    set location(location: string) {
+        this._location = location;
+    }
 
     addProduct(product: Product) {
         this._productList.set([...this._productList(), product]);

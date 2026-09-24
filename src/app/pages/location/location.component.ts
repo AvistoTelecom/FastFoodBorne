@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
+import { OrderService } from '../../core/services/order.service';
 
 @Component({
     selector: 'app-location',

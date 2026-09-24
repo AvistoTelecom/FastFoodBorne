@@ -1,15 +1,11 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
 import { SmallButtonComponent } from '../../core/components/small-button/small-button.component';
 
 @Component({
     selector: 'app-payment',
     standalone: true,
-    imports: [
-        HeaderImageComponent,
-        SmallButtonComponent,
-        OptionButtonComponent,
-    ],
+    imports: [HeaderImageComponent, SmallButtonComponent],
     templateUrl: './payment.component.html',
     styleUrl: './payment.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
