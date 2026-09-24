@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
     ChangeDetectionStrategy,
     Component,
@@ -15,7 +14,7 @@ import { SmallButtonComponent } from '../../core/components/small-button/small-b
 @Component({
     selector: 'app-dessert-modal',
     standalone: true,
-    imports: [CommonModule, ModalProductComponent, SmallButtonComponent],
+    imports: [ModalProductComponent, SmallButtonComponent],
     templateUrl: './dessert-modal.component.html',
     styleUrl: './dessert-modal.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
     ChangeDetectionStrategy,
     Component,
@@ -21,7 +20,6 @@ import { OrderService } from '../../core/services/order.service';
     selector: 'app-menu-composition',
     standalone: true,
     imports: [
-        CommonModule,
         HeaderImageComponent,
         ProductSelectorComponent,
         IngredientCardComponent,

@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
 import { SmallButtonComponent } from '../../core/components/small-button/small-button.component';
@@ -9,7 +8,6 @@ import { Router } from '@angular/router';
     selector: 'app-payment',
     standalone: true,
     imports: [
-        CommonModule,
         HeaderImageComponent,
         SmallButtonComponent,
         OptionButtonComponent,

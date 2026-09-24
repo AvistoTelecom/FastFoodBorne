@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
     Component,
     ChangeDetectionStrategy,
@@ -9,7 +8,7 @@ import {
 @Component({
     selector: 'app-product-selector',
     standalone: true,
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './product-selector.component.html',
     styleUrl: './product-selector.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,

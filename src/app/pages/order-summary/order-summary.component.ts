@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderImageComponent } from '../../core/components/header-image/header-image.component';
@@ -10,7 +9,7 @@ import { MenuService } from '../../core/services/menu.service';
 @Component({
     selector: 'app-order-summary',
     standalone: true,
-    imports: [CommonModule, HeaderImageComponent, SelectionFooterComponent],
+    imports: [HeaderImageComponent, SelectionFooterComponent],
     templateUrl: './order-summary.component.html',
     styleUrl: './order-summary.component.css',
     changeDetection: ChangeDetectionStrategy.OnPush,
